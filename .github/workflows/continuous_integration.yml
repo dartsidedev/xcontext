@@ -1,0 +1,35 @@
+name: Continuous Integration
+
+on: [push, pull_request]
+
+jobs:
+  format:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image:  google/dart:beta
+    steps:
+      - uses: actions/checkout@v2
+      - name: Ensure idiomatic Dart source code formatting
+        run: dartfmt --set-exit-if-changed .
+
+  # We aren't running tests at the moment.
+
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    needs: [format, test-ubuntu, test-macos, test-windows]
+    if: github.ref == 'refs/heads/master'
+    continue-on-error: true
+    container:
+      image:  google/dart:beta
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup credentials
+        run: |
+          mkdir -p ~/.pub-cache
+          echo ${{ secrets.PUB_CREDENTIALS_JSON }} > ~/.pub-cache/credentials.json
+      - name: Publish the package to pub.dartlang.org
+        run: pub publish --force
+      - name: Delete credentials
+        run: rm ~/.pub-cache/credentials.json
