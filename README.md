@@ -19,14 +19,12 @@ You have total control over which methods and getters you want to add to your co
 This package is an experiment to get rid of the `SomeClass.of(context).someMethod` calls in a codebase.
 As I was talking to people new to Flutter, I noticed that some people just can't wrap their heads around it,
 while simple getters and methods just feel intuitive to all of them.
+The package also simplifies other function calls that require the `context` to be passed in.
+I wrote the package in a way that is easy to customize to your needs and selectively add or hide extensions.
 
-The package also tries to simplify other method calls that for some reasons require the `context` to be passed in (think of `showDialog(context)`).
+Using the package will hopefully make your code easier to type, read and understand.
 
-Using the extension might make your code easier to type, read and understand.
-I wrote the package in a way that is easy to customize to your needs and style preference, so it's easy to selectively
-add extensions.
-
-It's important to mention that the `.of` static methods should not be considered bad or evil in any way.
+It's important to mention that the `.of` static methods should not be considered harmful in any way.
 If you like that idiom, please feel free to continue using it!
 
 ## Usage
@@ -35,6 +33,7 @@ If you like that idiom, please feel free to continue using it!
 // Add all methods and getters to BuildContext
 import 'package:xcontext/xcontext.dart';
 
+BuildContext context;
 // then...
 context.navigator.pushNamed('/other');
 context.scaffold;
@@ -43,15 +42,17 @@ context.theme;
 context.dividerTheme;
 context.cupertinoLocalizations;
 context.cupertinoTheme;
-context.showCupertinoDialog(builder: builder, useRootNavigator: true); // Don't forget to define the builder.
+context.showCupertinoDialog(builder: b, useRootNavigator: true); // Don't forget to define the builder.
 context.showTimePicker(initialTime: TimeOfDay.now());
 ```
 
 If you prefer to be even more concise, use the "tiny" version:
 
 ```dart
+// tiny_xcontext uses shorter names and does not add all getters
 import 'package:xcontext/tiny_xcontext.dart';
 
+BuildContext context;
 // then...
 context.nav.pushNamed('/other');
 context.scaf;
@@ -65,8 +66,6 @@ context.showTP(initialTime: TimeOfDay.now());
 ```
 
 ### The libraries of this package
-
-All the `.of` static methods from the official `widgets`, `material`, and `cupertino` libraries are available for you, if you import `xcontext.dart`.
 
 ```dart
 // Add all methods and getters to BuildContext
@@ -84,10 +83,21 @@ import 'package:xcontext/tiny_material.dart';
 import 'package:xcontext/tiny_widgets.dart';
 ```
 
+> **Libraries:** [`xcontext`](https://pub.dev/documentation/xcontext/latest/xcontext/xcontext-library.html),
+> [`cupertino`](https://pub.dev/documentation/xcontext/latest/cupertino/cupertino-library.html),
+> [`material`](https://pub.dev/documentation/xcontext/latest/material/material-library.html),
+> [`widgets`](https://pub.dev/documentation/xcontext/latest/widgets/widgets-library.html),
+> [`tiny_xcontext`](https://pub.dev/documentation/xcontext/latest/tiny_xcontext/tiny_xcontext-library.html)
+> [`tiny_cupertino`](https://pub.dev/documentation/xcontext/latest/tiny_cupertino/tiny_cupertino-library.html)
+> [`tiny_material`](https://pub.dev/documentation/xcontext/latest/tiny_material/tiny_material-library.html)
+> [`tiny_widgets`](https://pub.dev/documentation/xcontext/latest/tiny_widgets/tiny_widgets-library.html)
+
 ### From `Navigator.of(context)` to `context.navigator`
 
 The `xcontext` package lets you access `Something.of(context).someMethod` directly on the `context` as `context.something.someMethod`.
-It adds all the `.of` static methods return value as getters. So after you imported `'package:xcontext/xcontext.dart'`, you will be able to write:
+It adds all the `.of` static methods from the official `widgets`, `material`, and `cupertino` libraries' return value as getters.
+
+So after you imported `'package:xcontext/xcontext.dart'`, you will be able to write:
 
 ```dart
 import 'package:xcontext/xcontext.dart';
@@ -111,12 +121,11 @@ class Example extends StatelessWidget {
 }
 ```
 
-In case the `.of` static method accepts extra parameters, those values as exposed in a different getter, such as: 
+In case the `.of` static method accepts extra parameters, those values are exposed in a different getter, such as: 
 
 ```dart
 // Navigator.of(context, rootNavigator: true)
 context.rootNavigator;
-
 // Theme.of(this, shadowThemeOnly: true);
 context.shadowTheme;
 ```
@@ -148,31 +157,27 @@ RaisedButton(
 
 ### `hide`/`show`
 
-While the extensions might improve the discoverability of these values, seeing tens of extra methods popping up in your
-IDE whenever you type `context.` can be annoying. For these reasons, every getter and method is added as a separate
+While the extensions might improve the discoverability of some values, seeing tens of extra methods popping up in your
+IDE whenever you type "`context.`" can be annoying. For this reason, every getter and method is added as a separate
 extension, so you can `hide` or `show` them as you like.
 
 ```dart
 // // HIDE // //
 // If one or more extensions annoy you, hide them.
-// What the hell is a navigation rail theme?
-// Don't show context.navigationRailTheme
 import 'package:xcontext/material.dart' hide XContextNavigationRailTheme;
 
 // // SHOW // //
 // If you only need some extensions, show them, and hide all others.
-// Only add context.navigator and context.rootNavigator
+// Only show context.navigator and context.rootNavigator
 import 'package:xcontext/widgets.dart' show XContextNavigator, XContextRootNavigator;
 ```
 
-### Adopting it in a team
+### You can `export` only what you need
 
-Writing which extension to include in your files can be annoying.
+You might conclude that, while using some extensions from the package is great,
+the other extensions are less great, so you want see only a subset of the extensions everywhere.
 
-If you are working on a team, you might decide that while accessing some getters is sweet (maybe `navigator`, `mediaQuery`),
-the other extensions do not improve much, so you as a team want to decide to use only a subset of the extensions everywhere in your app's codebase.
-
-Just create a new Dart file, for example `your_favorite_extensions.dart`, select your exports, and import this file in the rest of your codebase.
+Just create a new Dart file, for example `your_favorite_extensions.dart`, export the extensions you like, and import this file in the rest of your codebase.
 
 ```dart
 // your_favorite_extensions.dart
@@ -188,7 +193,7 @@ export 'package:xcontext/xcontext.dart'
 
 ```dart
 // Some other file...
-import 'package:your_awesome_app/your_favorite_extensions';
+import 'package:your_awesome_app/your_favorite_extensions.dart';
 ```
 
 ### The tiny variation
@@ -203,5 +208,3 @@ import 'package:xcontext/tiny_xcontext.dart';
 context.nav.pop();
 final isLight = context.mq.platformBrightness == Brightness.light;
 ```
-
-You can also import only one library, for example importing `'package:xcontext/tiny_cupertino.dart'` will not add anything from the `material` or `widgets` library.
