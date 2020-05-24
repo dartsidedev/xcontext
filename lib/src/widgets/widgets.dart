@@ -1,272 +1,389 @@
 import 'package:flutter/services.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/widgets.dart' as widgets;
 
-extension BuildContextWidgetsX on BuildContext {
-  /// Returns the page storage bucket from the closest [PageStorage] ancestor.
+extension XContextPageStorage on widgets.BuildContext {
+  /// Returns the page storage bucket from the closest [widgets.PageStorage]
+  /// ancestor.
   ///
-  /// `context.pageStorage` is equivalent to `PageStorage.of(context)`.
-  PageStorageBucket get pageStorage {
-    return PageStorage.of(this);
+  /// `context.pageStorage` is equivalent to [widgets.PageStorage.of].
+  widgets.PageStorageBucket get pageStorage {
+    return widgets.PageStorage.of(this);
   }
+}
 
-  /// Returns the text direction from the closest [Directionality] ancestor.
+extension XContextTextDirection on widgets.BuildContext {
+  /// Returns the text direction from the closest [widgets.Directionality]
+  /// ancestor.
   ///
-  /// `context.textDirection` is equivalent to `Directionality.of(context)`.
-  TextDirection get textDirection {
-    return Directionality.of(this);
+  /// `context.textDirection` is equivalent to [widgets.Directionality.of].
+  widgets.TextDirection get textDirection {
+    return widgets.Directionality.of(this);
   }
+}
 
-  /// Returns the asset bundle from the closest [DefaultAssetBundle] ancestor.
+extension XContextAssetBundle on widgets.BuildContext {
+  /// Returns the asset bundle from the closest [widgets.DefaultAssetBundle]
+  /// ancestor.
   ///
-  /// `context.assetBundle` is equivalent to `DefaultAssetBundle.of(context)`.
+  /// `context.assetBundle` is equivalent to [widgets.DefaultAssetBundle.of].
   AssetBundle get assetBundle {
-    return DefaultAssetBundle.of(this);
+    return widgets.DefaultAssetBundle.of(this);
   }
+}
 
-  /// Returns the default text style from the closest [DefaultTextStyle] ancestor.
+extension XContextDefaultTextStyle on widgets.BuildContext {
+  /// Returns the default text style from the closest [widgets.DefaultTextStyle]
+  /// ancestor.
   ///
-  /// `context.defaultTextStyle` is equivalent to `DefaultTextStyle.of(context)`.
-  DefaultTextStyle get defaultTextStyle {
-    return DefaultTextStyle.of(this);
+  /// `context.defaultTextStyle` is equivalent to [widgets.DefaultTextStyle.of].
+  widgets.DefaultTextStyle get defaultTextStyle {
+    return widgets.DefaultTextStyle.of(this);
   }
+}
 
-  /// Returns the action dispatcher from the closest [Actions] ancestor.
+extension XContextActionDispatcher on widgets.BuildContext {
+  /// Returns the action dispatcher from the closest [widgets.Actions]
+  /// ancestor.
   ///
-  /// `context.actionDispatcher` is equivalent to `Actions.of(context)`.
-  ActionDispatcher get actionDispatcher {
-    return Actions.of(this);
+  /// `context.actionDispatcher` is equivalent to [widgets.Actions.of].
+  widgets.ActionDispatcher get actionDispatcher {
+    return widgets.Actions.of(this);
   }
+}
 
-  /// Returns the action dispatcher or null from the closest [Actions] ancestor.
+extension XContextActionDispatcherOrNull on widgets.BuildContext {
+  /// Returns the action dispatcher or null from the closest [widgets.Actions]
+  /// ancestor.
   ///
-  /// `context.actionDispatcherOrNull` is equivalent to `Actions.of(context, nullOk: true)`.
-  ActionDispatcher get actionDispatcherOrNull {
-    return Actions.of(this, nullOk: true);
+  /// `context.actionDispatcherOrNull` is equivalent to [widgets.Actions.of]
+  /// with `nullOk: true`.
+  widgets.ActionDispatcher get actionDispatcherOrNull {
+    return widgets.Actions.of(this, nullOk: true);
   }
+}
 
-  /// Returns the form state from the closest [Form] ancestor.
+extension XContextFormState on widgets.BuildContext {
+  /// Returns the form state from the closest [widgets.Form] ancestor.
   ///
-  /// `context.form` is equivalent to `Form.of(context)`.
-  FormState get form {
-    return Form.of(this);
+  /// `context.form` is equivalent to [widgets.Form.of].
+  widgets.FormState get form {
+    return widgets.Form.of(this);
   }
+}
 
-  /// Returns the navigator state from the closest [Navigator] ancestor.
+extension XContextNavigator on widgets.BuildContext {
+  /// Returns the navigator state from the closest [widgets.Navigator] ancestor.
   ///
-  /// `context.navigator` is equivalent to `Navigator.of(context)`.
-  NavigatorState get navigator {
-    return Navigator.of(this);
+  /// `context.navigator` is equivalent to [widgets.Navigator.of].
+  widgets.NavigatorState get navigator {
+    return widgets.Navigator.of(this);
   }
+}
 
+extension XContextRootNavigator on widgets.BuildContext {
   /// Returns the root navigator state.
   ///
-  /// `context.rootNavigator` is equivalent to `Navigator.of(context, rootNavigator: true)`.
-  NavigatorState get rootNavigator {
-    return Navigator.of(this, rootNavigator: true);
+  /// `context.rootNavigator` is equivalent to [widgets.Navigator.of] with
+  /// `rootNavigator: true`.
+  widgets.NavigatorState get rootNavigator {
+    return widgets.Navigator.of(this, rootNavigator: true);
   }
+}
 
-  /// Returns the navigator state or null from the closest [Navigator] ancestor.
+extension XContextNavigatorOrNull on widgets.BuildContext {
+  /// Returns the navigator state or null from the closest [widgets.Navigator]
+  /// ancestor.
   ///
-  /// `context.navigatorOrNull` is equivalent to `Navigator.of(context, nullOk: true)`.
-  NavigatorState get navigatorOrNull {
-    return Navigator.of(this, nullOk: true);
+  /// `context.navigatorOrNull` is equivalent to [widgets.Navigator.of]
+  /// with `nullOk: true`.
+  widgets.NavigatorState get navigatorOrNull {
+    return widgets.Navigator.of(this, nullOk: true);
   }
+}
 
+extension XContextRootNavigatorOrNull on widgets.BuildContext {
   /// Returns the root navigator state or null.
   ///
-  /// `context.rootNavigatorOrNull` is equivalent to `Navigator.of(context, rootNavigator: true, nullOk: true)`.
-  NavigatorState get rootNavigatorOrNull {
-    return Navigator.of(this, rootNavigator: true, nullOk: true);
+  /// `context.rootNavigatorOrNull` is equivalent to [widgets.Navigator.of]
+  /// with `rootNavigator: true`, and `nullOk: true`.
+  widgets.NavigatorState get rootNavigatorOrNull {
+    return widgets.Navigator.of(this, rootNavigator: true, nullOk: true);
   }
+}
 
-  /// Returns the media query data from the closest [MediaQuery] ancestor.
+extension XContextMediaQuery on widgets.BuildContext {
+  /// Returns the media query data from the closest [widgets.MediaQuery]
+  /// ancestor.
   ///
-  /// `context.mediaQuery` is equivalent to `MediaQuery.of(context)`.
-  MediaQueryData get mediaQuery {
-    return MediaQuery.of(this);
+  /// `context.mediaQuery` is equivalent to [widgets.MediaQuery.of].
+  widgets.MediaQueryData get mediaQuery {
+    return widgets.MediaQuery.of(this);
   }
+}
 
-  /// Returns the media query data or null from the closest [MediaQuery] ancestor.
+extension XContextMediaQueryOrNull on widgets.BuildContext {
+  /// Returns the media query data or null from the closest [widgets.MediaQuery]
+  /// ancestor.
   ///
-  /// `context.mediaQueryOrNull` is equivalent to `MediaQuery.of(context, nullOk: true)`.
-  MediaQueryData get mediaQueryOrNull {
-    return MediaQuery.of(this, nullOk: true);
+  /// `context.mediaQueryOrNull` is equivalent to [widgets.MediaQuery.of] with
+  /// `nullOk: true`.
+  widgets.MediaQueryData get mediaQueryOrNull {
+    return widgets.MediaQuery.of(this, nullOk: true);
   }
+}
 
-  /// Returns the scroll controller from the closest [PrimaryScrollController] ancestor.
+extension XContextPrimaryScrollController on widgets.BuildContext {
+  /// Returns the scroll controller from the closest
+  /// [widgets.PrimaryScrollController] ancestor.
   ///
-  /// `context.primaryScrollController` is equivalent to `PrimaryScrollController.of(context)`.
-  ScrollController get primaryScrollController {
-    return PrimaryScrollController.of(this);
+  /// `context.primaryScrollController` is equivalent to
+  /// [widgets.PrimaryScrollController.of].
+  widgets.ScrollController get primaryScrollController {
+    return widgets.PrimaryScrollController.of(this);
   }
+}
 
-  /// Returns the scrollable state from the closest [Scrollable] ancestor.
+extension XContextScrollable on widgets.BuildContext {
+  /// Returns the scrollable state from the closest [widgets.Scrollable]
+  /// ancestor.
   ///
-  /// `context.scrollable` is equivalent to `Scrollable.of(context)`.
-  ScrollableState get scrollable {
-    return Scrollable.of(this);
+  /// `context.scrollable` is equivalent to [widgets.Scrollable.of].
+  widgets.ScrollableState get scrollable {
+    return widgets.Scrollable.of(this);
   }
+}
 
-  /// Returns the focus order from the closest [FocusTraversalOrder] ancestor.
+extension XContextFocusOrder on widgets.BuildContext {
+  /// Returns the focus order from the closest [widgets.FocusTraversalOrder]
+  /// ancestor.
   ///
-  /// `context.focusOrder` is equivalent to `FocusTraversalOrder.of(context)`.
-  FocusOrder get focusOrder {
-    return FocusTraversalOrder.of(this);
+  /// `context.focusOrder` is equivalent to [widgets.FocusTraversalOrder.of].
+  widgets.FocusOrder get focusOrder {
+    return widgets.FocusTraversalOrder.of(this);
   }
+}
 
-  /// Returns the focus order or null from the closest [FocusTraversalOrder] ancestor.
+extension XContextFocusOrderOrNull on widgets.BuildContext {
+  /// Returns the focus order or null from the closest
+  ///[widgets.FocusTraversalOrder] ancestor.
   ///
-  /// `context.focusOrderOrNull` is equivalent to `FocusTraversalOrder.of(context, nullOk: true)`.
-  FocusOrder get focusOrderOrNull {
-    return FocusTraversalOrder.of(this, nullOk: true);
+  /// `context.focusOrderOrNull` is equivalent to
+  /// [widgets.FocusTraversalOrder.of] with `nullOk: true`.
+  widgets.FocusOrder get focusOrderOrNull {
+    return widgets.FocusTraversalOrder.of(this, nullOk: true);
   }
+}
 
-  /// Returns the focus traversal policy from the closest [FocusTraversalGroup] ancestor.
+extension XContextFocusTraversalPolicy on widgets.BuildContext {
+  /// Returns the focus traversal policy from the closest
+  /// [widgets.FocusTraversalGroup] ancestor.
   ///
-  /// `context.focusTraversalPolicy` is equivalent to `FocusTraversalGroup.of(context)`.
-  FocusTraversalPolicy get focusTraversalPolicy {
-    return FocusTraversalGroup.of(this);
+  /// `context.focusTraversalPolicy` is equivalent to
+  /// [widgets.FocusTraversalGroup.of].
+  widgets.FocusTraversalPolicy get focusTraversalPolicy {
+    return widgets.FocusTraversalGroup.of(this);
   }
+}
 
-  /// Returns the focus traversal policy or null from the closest [FocusTraversalGroup] ancestor.
+extension XContextFocusTraversalPolicyOrNull on widgets.BuildContext {
+  /// Returns the focus traversal policy or null from the closest
+  /// [widgets.FocusTraversalGroup] ancestor.
   ///
-  /// `context.focusTraversalPolicyOrNull` is equivalent to `FocusTraversalGroup.of(context, nullOk: true)`.
-  FocusTraversalPolicy get focusTraversalPolicyOrNull {
-    return FocusTraversalGroup.of(this, nullOk: true);
+  /// `context.focusTraversalPolicyOrNull` is equivalent to
+  /// [widgets.FocusTraversalGroup.of] with `nullOk: true`.
+  widgets.FocusTraversalPolicy get focusTraversalPolicyOrNull {
+    return widgets.FocusTraversalGroup.of(this, nullOk: true);
   }
+}
 
-  /// Returns the shortcut manager from the closest [Shortcuts] ancestor.
+extension XContextShortcutManager on widgets.BuildContext {
+  /// Returns the shortcut manager from the closest [widgets.Shortcuts]
+  /// ancestor.
   ///
-  /// `context.shortcutManager` is equivalent to `Shortcuts.of(context)`.
-  ShortcutManager get shortcutManager {
-    return Shortcuts.of(this);
+  /// `context.shortcutManager` is equivalent to [widgets.Shortcuts.of].
+  widgets.ShortcutManager get shortcutManager {
+    return widgets.Shortcuts.of(this);
   }
+}
 
-  /// Returns the shortcut manager or null from the closest [Shortcuts] ancestor.
+extension XContextShortcutManagerOrNull on widgets.BuildContext {
+  /// Returns the shortcut manager or null from the closest [widgets.Shortcuts]
+  /// ancestor.
   ///
-  /// `context.shortcutManagerOrNull` is equivalent to `Shortcuts.of(context, nullOk: true)`.
-  ShortcutManager get shortcutManagerOrNull {
-    return Shortcuts.of(this, nullOk: true);
+  /// `context.shortcutManagerOrNull` is equivalent to
+  /// [widgets.Shortcuts.of] with `nullOk: true`.
+  widgets.ShortcutManager get shortcutManagerOrNull {
+    return widgets.Shortcuts.of(this, nullOk: true);
   }
+}
 
-  /// Returns the scroll behavior from the closest [ScrollConfiguration] ancestor.
+extension XContextScrollConfiguration on widgets.BuildContext {
+  /// Returns the scroll behavior from the closest
+  /// [widgets.ScrollConfiguration] ancestor.
   ///
-  /// `context.scrollConfiguration` is equivalent to `ScrollConfiguration.of(context)`.
-  ScrollBehavior get scrollConfiguration {
-    return ScrollConfiguration.of(this);
+  /// `context.scrollConfiguration` is equivalent to
+  /// [widgets.ScrollConfiguration.of].
+  widgets.ScrollBehavior get scrollConfiguration {
+    return widgets.ScrollConfiguration.of(this);
   }
+}
 
-  /// Returns the icon theme data from the closest [IconTheme] ancestor.
+extension XContextIconTheme on widgets.BuildContext {
+  /// Returns the icon theme data from the closest [widgets.IconTheme]
+  /// ancestor.
   ///
-  /// `context.iconTheme` is equivalent to `IconTheme.of(context)`.
-  IconThemeData get iconTheme {
-    return IconTheme.of(this);
+  /// `context.iconTheme` is equivalent to [widgets.IconTheme.of].
+  widgets.IconThemeData get iconTheme {
+    return widgets.IconTheme.of(this);
   }
+}
 
-  /// Returns whether tickers are enabled or disabled from the closest [TickerMode] ancestor.
+extension XContextTickingEnabled on widgets.BuildContext {
+  /// Returns whether tickers are enabled or disabled from the closest
+  /// [widgets.TickerMode] ancestor.
   ///
-  /// `context.tickingEnabled` is equivalent to `TickerMode.of(context)`.
+  /// `context.tickingEnabled` is equivalent to [widgets.TickerMode.of].
   bool get tickingEnabled {
-    return TickerMode.of(this);
+    return widgets.TickerMode.of(this);
   }
+}
 
-  /// Returns the animated list state from the closest [AnimatedList] ancestor.
+extension XContextAnimatedList on widgets.BuildContext {
+  /// Returns the animated list state from the closest [widgets.AnimatedList]
+  ///ancestor.
   ///
-  /// `context.animatedList` is equivalent to `AnimatedList.of(context)`.
-  AnimatedListState get animatedList {
-    return AnimatedList.of(this);
+  /// `context.animatedList` is equivalent to [widgets.AnimatedList.of].
+  widgets.AnimatedListState get animatedList {
+    return widgets.AnimatedList.of(this);
   }
+}
 
-  /// Returns the animated list state or null if not present from the closest [AnimatedList] ancestor.
+extension XContextAnimatedListOrNull on widgets.BuildContext {
+  /// Returns the animated list state or null if not present from the closest
+  /// [widgets.AnimatedList] ancestor.
   ///
-  /// `context.animatedListOrNull` is equivalent to `AnimatedList.of(context, nullOk: true)`.
-  AnimatedListState get animatedListOrNull {
-    return AnimatedList.of(this, nullOk: true);
+  /// `context.animatedListOrNull` is equivalent to
+  /// [widgets.AnimatedList.of] with `nullOk: true`.
+  widgets.AnimatedListState get animatedListOrNull {
+    return widgets.AnimatedList.of(this, nullOk: true);
   }
+}
 
-  /// Returns the sliver animated list state from the closest [SliverAnimatedList] ancestor.
+extension XContextSliverAnimatedList on widgets.BuildContext {
+  /// Returns the sliver animated list state from the closest
+  /// [widgets.SliverAnimatedList] ancestor.
   ///
-  /// `context.sliverAnimatedList` is equivalent to `SliverAnimatedList.of(context)`.
-  SliverAnimatedListState get sliverAnimatedList {
-    return SliverAnimatedList.of(this);
+  /// `context.sliverAnimatedList` is equivalent to
+  /// [widgets.SliverAnimatedList.of].
+  widgets.SliverAnimatedListState get sliverAnimatedList {
+    return widgets.SliverAnimatedList.of(this);
   }
+}
 
-  /// Returns the sliver animated list state or null if not present from the closest [SliverAnimatedList] ancestor.
+extension XContextSliverAnimatedListOrNull on widgets.BuildContext {
+  /// Returns the sliver animated list state or null if not present from the
+  /// closest [widgets.SliverAnimatedList] ancestor.
   ///
-  /// `context.sliverAnimatedListOrNull` is equivalent to `SliverAnimatedList.of(this, nullOk: true)`.
-  SliverAnimatedListState get sliverAnimatedListOrNull {
-    return SliverAnimatedList.of(this, nullOk: true);
+  /// `context.sliverAnimatedListOrNull` is equivalent to
+  /// [widgets.SliverAnimatedList.of] with `nullOk: true`.
+  widgets.SliverAnimatedListState get sliverAnimatedListOrNull {
+    return widgets.SliverAnimatedList.of(this, nullOk: true);
   }
+}
 
-  /// Returns the focus node from the closest [Focus] ancestor.
+extension XContextFocusNode on widgets.BuildContext {
+  /// Returns the focus node from the closest [widgets.Focus] ancestor.
   ///
-  /// `context.focusNode` is equivalent to `Focus.of(context)`.
-  FocusNode get focusNode {
-    return Focus.of(this);
+  /// `context.focusNode` is equivalent to [widgets.Focus.of]`.
+  widgets.FocusNode get focusNode {
+    return widgets.Focus.of(this);
   }
+}
 
-  /// Returns the focus node or null from the closest [Focus] ancestor.
+extension XContextFocusNodeOrNull on widgets.BuildContext {
+  /// Returns the focus node or null from the closest [widgets.Focus] ancestor.
   ///
-  /// `context.focusNodeOrNull` is equivalent to `Focus.of(context, nullOk: true)`.
-  FocusNode get focusNodeOrNull {
-    return Focus.of(this, nullOk: true);
+  /// `context.focusNodeOrNull` is equivalent to
+  /// [widgets.Focus.of] with `nullOk: true`.
+  widgets.FocusNode get focusNodeOrNull {
+    return widgets.Focus.of(this, nullOk: true);
   }
+}
 
-  /// Returns the focus scope node from the closest [FocusScope] ancestor.
+extension XContextFocusScope on widgets.BuildContext {
+  /// Returns the focus scope node from the closest [widgets.FocusScope]
+  /// ancestor.
   ///
-  /// `context.focusScope` is equivalent to `FocusScope.of(context)`.
-  FocusScopeNode get focusScope {
-    return FocusScope.of(this);
+  /// `context.focusScope` is equivalent to
+  /// [widgets.FocusScope.of].
+  widgets.FocusScopeNode get focusScope {
+    return widgets.FocusScope.of(this);
   }
+}
 
-  /// Returns the overlay state from the closest [Overlay] ancestor.
+extension XContextOverlay on widgets.BuildContext {
+  /// Returns the overlay state from the closest [widgets.Overlay] ancestor.
   ///
-  /// `context.overlay` is equivalent to `Overlay.of(context)`.
-  OverlayState get overlay {
-    return Overlay.of(this);
+  /// `context.overlay` is equivalent to
+  /// [widgets.Overlay.of].
+  widgets.OverlayState get overlay {
+    return widgets.Overlay.of(this);
   }
+}
 
-  /// Returns the overlay state from the root [Overlay] ancestor.
+extension XContextRootOverlay on widgets.BuildContext {
+  /// Returns the overlay state from the root [widgets.Overlay] ancestor.
   ///
-  /// `context.rootOverlay` is equivalent to `Overlay.of(context, rootOverlay: true)`.
-  OverlayState get rootOverlay {
-    return Overlay.of(this, rootOverlay: true);
+  /// `context.rootOverlay` is equivalent to
+  /// [widgets.Overlay.of] with `rootOverlay: true`.
+  widgets.OverlayState get rootOverlay {
+    return widgets.Overlay.of(this, rootOverlay: true);
   }
+}
 
-  /// Returns the widgets localizations from the closest [WidgetsLocalizations] ancestor.
+extension XContextWidgetsLocalizations on widgets.BuildContext {
+  /// Returns the widgets localizations from the closest
+  /// [widgets.WidgetsLocalizations] ancestor.
   ///
-  /// `context.widgetsLocalizations` is equivalent to `WidgetsLocalizations.of(context)`.
-  WidgetsLocalizations get widgetsLocalizations {
-    return WidgetsLocalizations.of(this);
+  /// `context.widgetsLocalizations` is equivalent to
+  /// [widgets.WidgetsLocalizations.of].
+  widgets.WidgetsLocalizations get widgetsLocalizations {
+    return widgets.WidgetsLocalizations.of(this);
   }
+}
 
+extension XContextPrecacheImage on widgets.BuildContext {
   /// Prefetches an image into the image cache.
+  ///
+  /// Equivalent to [widgets.precacheImage].
   Future<void> precacheImage(
-    ImageProvider provider, {
-    Size size,
-    ImageErrorListener onError,
+    widgets.ImageProvider provider, {
+    widgets.Size size,
+    widgets.ImageErrorListener onError,
   }) {
-    return _precacheImage(
+    return widgets.precacheImage(
       provider,
       this,
       size: size,
       onError: onError,
     );
   }
+}
 
+extension XContextShowGeneralDialog on widgets.BuildContext {
   /// Displays a dialog above the current contents of the app.
   ///
-  /// Equivalent to [_showGeneralDialog].
+  /// Equivalent to [widgets.showGeneralDialog].
   Future<T> showGeneralDialog<T>(
-      {@required RoutePageBuilder pageBuilder,
+      {@widgets.required widgets.RoutePageBuilder pageBuilder,
       bool barrierDismissible,
       String barrierLabel,
-      Color barrierColor,
+      widgets.Color barrierColor,
       Duration transitionDuration,
-      RouteTransitionsBuilder transitionBuilder,
+      widgets.RouteTransitionsBuilder transitionBuilder,
       bool useRootNavigator: true,
-      RouteSettings routeSettings}) {
-    return _showGeneralDialog<T>(
+      widgets.RouteSettings routeSettings}) {
+    return widgets.showGeneralDialog<T>(
       context: this,
       pageBuilder: pageBuilder,
       barrierDismissible: barrierDismissible,
@@ -278,30 +395,34 @@ extension BuildContextWidgetsX on BuildContext {
       routeSettings: routeSettings,
     );
   }
+}
 
-  /// Creates an [ImageConfiguration] based on the context (and optionally size).
-  ImageConfiguration createLocalImageConfiguration({Size size}) {
-    return _createLocalImageConfiguration(this, size: size);
-  }
-
-  /// Returns the [AxisDirection] in the given [Axis] in the current
-  /// [Directionality] (or the reverse if `reverse` is true).
+extension XContextCreateLocalImageConfiguration on widgets.BuildContext {
+  /// Creates an [widgets.ImageConfiguration] based on the context
+  /// (and optionally size).
   ///
-  /// Equivalent to [_getAxisDirectionFromAxisReverseAndDirectionality].
-  AxisDirection getAxisDirectionFromAxisReverseAndDirectionality(
-    Axis axis,
+  /// Equivalent to [widgets.createLocalImageConfiguration].
+  widgets.ImageConfiguration createLocalImageConfiguration({
+    widgets.Size size,
+  }) {
+    return widgets.createLocalImageConfiguration(this, size: size);
+  }
+}
+
+extension XContextGetAxisDirectionFromAxisReverseAndDirectionality
+    on widgets.BuildContext {
+  /// Returns the [widgets.AxisDirection] in the given [widgets.Axis] in the
+  /// current [widgets.Directionality] (or the reverse if `reverse` is true).
+  ///
+  /// Equivalent to [widgets.getAxisDirectionFromAxisReverseAndDirectionality].
+  widgets.AxisDirection getAxisDirectionFromAxisReverseAndDirectionality(
+    widgets.Axis axis,
     bool reverse,
   ) {
-    return _getAxisDirectionFromAxisReverseAndDirectionality(
+    return widgets.getAxisDirectionFromAxisReverseAndDirectionality(
       this,
       axis,
       reverse,
     );
   }
 }
-
-const _precacheImage = precacheImage;
-const _showGeneralDialog = showGeneralDialog;
-const _createLocalImageConfiguration = createLocalImageConfiguration;
-const _getAxisDirectionFromAxisReverseAndDirectionality =
-    getAxisDirectionFromAxisReverseAndDirectionality;
