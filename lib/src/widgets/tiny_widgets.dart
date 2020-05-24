@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' as widgets;
 
+/// `Form.of(context)` as `context.form`
 extension TinyXContextFormState on widgets.BuildContext {
   /// Returns the form state from the closest [widgets.Form] ancestor.
   ///
@@ -10,6 +11,7 @@ extension TinyXContextFormState on widgets.BuildContext {
   }
 }
 
+/// `Navigator.of(context)` as `context.nav`
 extension TinyXContextNavigator on widgets.BuildContext {
   /// Returns the navigator state from the closest [widgets.Navigator] ancestor.
   ///
@@ -19,6 +21,7 @@ extension TinyXContextNavigator on widgets.BuildContext {
   }
 }
 
+/// `Navigator.of(context, rootNavigator: true)` as `context.rootNav`
 extension TinyXContextRootNavigator on widgets.BuildContext {
   /// Returns the root navigator state.
   ///
@@ -29,6 +32,7 @@ extension TinyXContextRootNavigator on widgets.BuildContext {
   }
 }
 
+/// `MediaQuery.of(context)` as `context.mq`
 extension TinyXContextMediaQuery on widgets.BuildContext {
   /// Returns the media query data from the closest [widgets.MediaQuery]
   /// ancestor.
@@ -39,6 +43,7 @@ extension TinyXContextMediaQuery on widgets.BuildContext {
   }
 }
 
+/// `Focus.of(context)` as `context.fNode`
 extension TinyXContextFocusNode on widgets.BuildContext {
   /// Returns the focus node from the closest [widgets.Focus] ancestor.
   ///
@@ -48,6 +53,7 @@ extension TinyXContextFocusNode on widgets.BuildContext {
   }
 }
 
+/// `FocusScope.of(context)` as `context.fScope`
 extension TinyXContextFocusScope on widgets.BuildContext {
   /// Returns the focus scope node from the closest [widgets.FocusScope]
   /// ancestor.
@@ -59,6 +65,7 @@ extension TinyXContextFocusScope on widgets.BuildContext {
   }
 }
 
+/// `Overlay.of(context)` as `context.overlay`
 extension TinyXContextOverlay on widgets.BuildContext {
   /// Returns the overlay state from the closest [widgets.Overlay] ancestor.
   ///
@@ -69,6 +76,7 @@ extension TinyXContextOverlay on widgets.BuildContext {
   }
 }
 
+/// `Overlay.of(context, rootOverlay: true)` as `context.rootOverlay`
 extension TinyXContextRootOverlay on widgets.BuildContext {
   /// Returns the overlay state from the root [widgets.Overlay] ancestor.
   ///
@@ -79,6 +87,7 @@ extension TinyXContextRootOverlay on widgets.BuildContext {
   }
 }
 
+/// `WidgetsLocalizations.of(context)` as `context.widgetsL10n`
 extension TinyXContextWidgetsLocalizations on widgets.BuildContext {
   /// Returns the widgets localizations from the closest
   /// [widgets.WidgetsLocalizations] ancestor.
@@ -90,6 +99,7 @@ extension TinyXContextWidgetsLocalizations on widgets.BuildContext {
   }
 }
 
+/// `showGeneralDialog<T>(context: context, ...)` as `context.showGeneralDialog<T>(...)`
 extension TinyXContextShowGeneralDialog on widgets.BuildContext {
   /// Displays a dialog above the current contents of the app.
   ///

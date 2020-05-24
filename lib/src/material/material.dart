@@ -2,6 +2,7 @@ import 'dart:core';
 
 import 'package:flutter/material.dart' as material;
 
+/// `MaterialInkController.of(context)` as `context.materialInkController`
 extension XContextMaterialInkController on material.BuildContext {
   /// Returns the material ink controller from the closest [material.Material]
   /// ancestor.
@@ -12,6 +13,7 @@ extension XContextMaterialInkController on material.BuildContext {
   }
 }
 
+/// `MaterialBannerThemeData.of(context)` as `context.materialBannerTheme`
 extension XContextMaterialBannerTheme on material.BuildContext {
   /// Returns the material banner theme data from the closest
   /// [material.MaterialBannerTheme] ancestor.
@@ -23,6 +25,7 @@ extension XContextMaterialBannerTheme on material.BuildContext {
   }
 }
 
+/// `Scaffold.of(context)` as `context.scaffold`
 extension XContextScaffold on material.BuildContext {
   /// Returns the scaffold state from the closest [material.Scaffold] ancestor.
   ///
@@ -32,6 +35,7 @@ extension XContextScaffold on material.BuildContext {
   }
 }
 
+/// `NavigationRailTheme.of(context)` as `context.navigationRailTheme`
 extension XContextNavigationRailTheme on material.BuildContext {
   /// Returns the navigation rail theme data from the closest
   /// [material.NavigationRailTheme] ancestor.
@@ -43,6 +47,7 @@ extension XContextNavigationRailTheme on material.BuildContext {
   }
 }
 
+/// `BottomAppBarTheme.of(context)` as `context.bottomAppBarTheme`
 extension XContextBottomAppBar on material.BuildContext {
   /// Returns the bottom app bar theme from the closest
   /// [material.BottomAppBarTheme] ancestor.
@@ -54,6 +59,7 @@ extension XContextBottomAppBar on material.BuildContext {
   }
 }
 
+/// `TabBarTheme.of(context)` as `context.tabBarTheme`
 extension XContextTabBarTheme on material.BuildContext {
   /// Returns the tab bar theme from the closest [material.TabBarTheme]
   /// ancestor.
@@ -64,6 +70,7 @@ extension XContextTabBarTheme on material.BuildContext {
   }
 }
 
+/// `AppBarTheme.of(context)` as `context.appBarTheme`
 extension XContextAppBarTheme on material.BuildContext {
   /// Returns the app bar theme from the closest [material.AppBarTheme]
   /// ancestor.
@@ -74,6 +81,7 @@ extension XContextAppBarTheme on material.BuildContext {
   }
 }
 
+/// `PopupMenuTheme.of(context)` as `context.popupMenuTheme`
 extension XContextPopupMenuTheme on material.BuildContext {
   /// Returns the popup menu theme data from the closest
   /// [material.PopupMenuTheme] ancestor.
@@ -84,6 +92,7 @@ extension XContextPopupMenuTheme on material.BuildContext {
   }
 }
 
+/// `DefaultTabController.of(context)` as `context.tabController`
 extension XContextTabController on material.BuildContext {
   /// Returns the tab controller from the closest
   /// [material.DefaultTabController] ancestor.
@@ -95,6 +104,7 @@ extension XContextTabController on material.BuildContext {
   }
 }
 
+/// `TooltipTheme.of(context)` as `context.tooltipTheme`
 extension XContextTooltipTheme on material.BuildContext {
   /// Returns the tooltip theme data from the closest [material.TooltipTheme]
   /// ancestor.
@@ -105,6 +115,7 @@ extension XContextTooltipTheme on material.BuildContext {
   }
 }
 
+/// `DialogTheme.of(context)` as `context.dialogTheme`
 extension XContextDialogTheme on material.BuildContext {
   /// Returns the dialog theme data from the closest [material.DialogTheme]
   /// ancestor.
@@ -115,6 +126,7 @@ extension XContextDialogTheme on material.BuildContext {
   }
 }
 
+/// `CardTheme.of(context)` as `context.cardTheme`
 extension XContextCardTheme on material.BuildContext {
   /// Returns the card theme data from the closest [material.CardTheme]
   /// ancestor.
@@ -125,6 +137,7 @@ extension XContextCardTheme on material.BuildContext {
   }
 }
 
+/// `ButtonTheme.of(context)` as `context.buttonTheme`
 extension XContextButtonTheme on material.BuildContext {
   /// Returns the button theme data from the closest [material.ButtonTheme]
   /// ancestor.
@@ -135,6 +148,7 @@ extension XContextButtonTheme on material.BuildContext {
   }
 }
 
+/// `ListTileTheme.of(context)` as `context.listTileTheme`
 extension XContextListTileTheme on material.BuildContext {
   /// Returns the list tile theme data from the closest [material.ListTileTheme]
   /// ancestor.
@@ -145,6 +159,7 @@ extension XContextListTileTheme on material.BuildContext {
   }
 }
 
+/// `DividerTheme.of(context)` as `context.dividerTheme`
 extension XContextDividerTheme on material.BuildContext {
   /// Returns the divider theme data from the closest [material.DividerTheme]
   /// ancestor.
@@ -155,6 +170,7 @@ extension XContextDividerTheme on material.BuildContext {
   }
 }
 
+/// `MaterialLocalizations.of(context)` as `context.materialLocalizations`
 extension XContextMaterialLocalizations on material.BuildContext {
   /// Returns the material localizations from the closest
   /// [material.MaterialLocalizations] ancestor.
@@ -166,6 +182,7 @@ extension XContextMaterialLocalizations on material.BuildContext {
   }
 }
 
+/// `SliderThemeof(context)` as `context.sliderTheme`
 extension XContextSliderTheme on material.BuildContext {
   /// Returns the slider theme data from the closest [material.SliderTheme]
   /// ancestor.
@@ -176,6 +193,7 @@ extension XContextSliderTheme on material.BuildContext {
   }
 }
 
+/// `ChipTheme.of(context)` as `context.chipTheme`
 extension XContextChipTheme on material.BuildContext {
   /// Returns the chip theme data from the closest [material.ChipTheme]
   /// ancestor.
@@ -186,6 +204,7 @@ extension XContextChipTheme on material.BuildContext {
   }
 }
 
+/// `ButtonBarTheme.of(context)` as `context.buttonBarTheme`
 extension XContextButtonBarTheme on material.BuildContext {
   /// Returns the button bar theme data from the closest
   /// [material.ButtonBarTheme] ancestor.
@@ -196,6 +215,7 @@ extension XContextButtonBarTheme on material.BuildContext {
   }
 }
 
+/// `Theme.of(context)` as `context.theme`
 extension XContextTheme on material.BuildContext {
   /// Returns the theme data from the closest [material.Theme] ancestor.
   ///
@@ -205,6 +225,7 @@ extension XContextTheme on material.BuildContext {
   }
 }
 
+/// `Theme.of(context, shadowThemeOnly: true)` as `context.shadowTheme`
 extension XContextShadowTheme on material.BuildContext {
   /// Returns the shadow theme data from the closest [material.Theme] ancestor.
   ///
@@ -215,6 +236,7 @@ extension XContextShadowTheme on material.BuildContext {
   }
 }
 
+/// `showAboutDialog(context: context, ...)` as `context.showAboutDialog(...)`
 extension XContextShowAboutDialog on material.BuildContext {
   /// Displays an [material.AboutDialog], which describes the application and
   /// provides a button to show licenses for software used by the application.
@@ -242,6 +264,7 @@ extension XContextShowAboutDialog on material.BuildContext {
   }
 }
 
+/// `showBottomSheet(context: context, ...)` as `context.showBottomSheet(...)`
 extension XContextShowBottomSheet on material.BuildContext {
   /// Shows a material design bottom sheet in the nearest [material.Scaffold]
   /// ancestor.
@@ -265,6 +288,7 @@ extension XContextShowBottomSheet on material.BuildContext {
   }
 }
 
+/// `showDatePicker(context: context, ...)` as `context.showDatePicker(...)`
 extension XContextShowDatePicker on material.BuildContext {
   /// Shows a dialog containing a Material Design date picker.
   ///
@@ -314,6 +338,7 @@ extension XContextShowDatePicker on material.BuildContext {
   }
 }
 
+/// `showDialog(context: context, ...)` as `context.showDialog(...)`
 extension XContextShowDialog on material.BuildContext {
   /// Displays a Material dialog above the current contents of the app, with
   /// Material entrance and exit animations, modal barrier color, and modal
@@ -336,17 +361,19 @@ extension XContextShowDialog on material.BuildContext {
   }
 }
 
+/// `showLicensePage(context: context, ...)` as `context.showLicensePage(...)`
 extension XContextShowLicensePage on material.BuildContext {
   /// Displays a [material.LicensePage], which shows licenses for software used
   /// by the application.
   ///
   /// Equivalent to [material.showLicensePage].
-  void showLicensePage(
-      {String applicationName,
-      String applicationVersion,
-      material.Widget applicationIcon,
-      String applicationLegalese,
-      bool useRootNavigator: false}) {
+  void showLicensePage({
+    String applicationName,
+    String applicationVersion,
+    material.Widget applicationIcon,
+    String applicationLegalese,
+    bool useRootNavigator: false,
+  }) {
     return material.showLicensePage(
       context: this,
       applicationName: applicationName,
@@ -358,6 +385,7 @@ extension XContextShowLicensePage on material.BuildContext {
   }
 }
 
+/// `showMenu(context: context, ...)` as `context.showMenu(...)`
 extension XContextShowMenu on material.BuildContext {
   /// Show a popup menu that contains the items at position.
   Future<T> showMenu<T>({
@@ -386,6 +414,7 @@ extension XContextShowMenu on material.BuildContext {
   }
 }
 
+/// `showModalBottomSheet(context: context, ...)` as `context.showModalBottomSheet(...)`
 extension XContextShowModalBottomSheet on material.BuildContext {
   /// Shows a modal material design bottom sheet.
   ///
@@ -418,6 +447,7 @@ extension XContextShowModalBottomSheet on material.BuildContext {
   }
 }
 
+/// `showSearch(context: context, ...)` as `context.showSearch(...)`
 extension XContextShowSearch on material.BuildContext {
   /// Shows a full screen search page and returns the search result selected by
   /// the user when the page is closed.
@@ -435,6 +465,7 @@ extension XContextShowSearch on material.BuildContext {
   }
 }
 
+/// `showTimePicker(context: context, ...)` as `context.showTimePicker(...)`
 extension XContextShowTimePicker on material.BuildContext {
   /// Shows a dialog containing a material design time picker.
   ///

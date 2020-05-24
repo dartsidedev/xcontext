@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart' as cupertino;
 
+/// `CupertinoUserInterfaceLevel.of(context)` as `context.cupUiLevel`
 extension TinyXContextCupertinoUserInterfaceLevel on cupertino.BuildContext {
   /// Returns the cupertino user interface level data from the closest
   /// [cupertino.CupertinoUserInterfaceLevel] ancestor.
@@ -13,6 +14,7 @@ extension TinyXContextCupertinoUserInterfaceLevel on cupertino.BuildContext {
   }
 }
 
+/// `CupertinoTheme.of(context)` as `context.cupTheme`
 extension TinyXContextCupertinoTheme on cupertino.BuildContext {
   /// Returns the cupertino theme data from the closest
   /// [cupertino.CupertinoTheme] ancestor.
@@ -24,6 +26,7 @@ extension TinyXContextCupertinoTheme on cupertino.BuildContext {
   }
 }
 
+/// `CupertinoLocalizations.of(context)` as `context.cupL10n`
 extension TinyXContextCupertinoLocalizations on cupertino.BuildContext {
   /// Returns the cupertino localizations from the closest
   /// [cupertino.CupertinoLocalizations] ancestor.
@@ -35,6 +38,7 @@ extension TinyXContextCupertinoLocalizations on cupertino.BuildContext {
   }
 }
 
+/// `showCupertinoDialog(context: context, ...)` as `context.showCupertinoDialog(...)`
 extension TinyXContextShowCupertinoDialog on cupertino.BuildContext {
   /// Displays an iOS-style dialog above the current contents of the app, with
   /// iOS-style entrance and exit animations, modal barrier color, and modal
@@ -55,6 +59,7 @@ extension TinyXContextShowCupertinoDialog on cupertino.BuildContext {
   }
 }
 
+/// `showCupModalPopup(context: context, ...)` as `context.showCupModalPopup(...)`
 extension TinyXContextShowCupertinoModalPopup on cupertino.BuildContext {
   /// Shows a modal iOS-style popup that slides up from the bottom of the screen.
   ///

@@ -1,6 +1,7 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart' as widgets;
 
+/// `PageStorage.of(context)` as `context.pageStorage`
 extension XContextPageStorage on widgets.BuildContext {
   /// Returns the page storage bucket from the closest [widgets.PageStorage]
   /// ancestor.
@@ -11,6 +12,7 @@ extension XContextPageStorage on widgets.BuildContext {
   }
 }
 
+/// `Directionality.of(context)` as `context.textDirection`
 extension XContextTextDirection on widgets.BuildContext {
   /// Returns the text direction from the closest [widgets.Directionality]
   /// ancestor.
@@ -21,6 +23,7 @@ extension XContextTextDirection on widgets.BuildContext {
   }
 }
 
+/// `DefaultAssetBundle.of(context)` as `context.assetBundle`
 extension XContextAssetBundle on widgets.BuildContext {
   /// Returns the asset bundle from the closest [widgets.DefaultAssetBundle]
   /// ancestor.
@@ -31,6 +34,7 @@ extension XContextAssetBundle on widgets.BuildContext {
   }
 }
 
+/// `DefaultTextStyle.of(context)` as `context.defaultTextStyle`
 extension XContextDefaultTextStyle on widgets.BuildContext {
   /// Returns the default text style from the closest [widgets.DefaultTextStyle]
   /// ancestor.
@@ -41,6 +45,7 @@ extension XContextDefaultTextStyle on widgets.BuildContext {
   }
 }
 
+/// `Actions.of(context)` as `context.actionDispatcher`
 extension XContextActionDispatcher on widgets.BuildContext {
   /// Returns the action dispatcher from the closest [widgets.Actions]
   /// ancestor.
@@ -51,6 +56,7 @@ extension XContextActionDispatcher on widgets.BuildContext {
   }
 }
 
+/// `Actions.of(context, nullOk: true)` as `actionDispatcherOrNull.`
 extension XContextActionDispatcherOrNull on widgets.BuildContext {
   /// Returns the action dispatcher or null from the closest [widgets.Actions]
   /// ancestor.
@@ -62,6 +68,7 @@ extension XContextActionDispatcherOrNull on widgets.BuildContext {
   }
 }
 
+/// `Form.of(context)` as `context.form`
 extension XContextFormState on widgets.BuildContext {
   /// Returns the form state from the closest [widgets.Form] ancestor.
   ///
@@ -71,6 +78,7 @@ extension XContextFormState on widgets.BuildContext {
   }
 }
 
+/// `Navigator.of(context)` as `context.navigator`
 extension XContextNavigator on widgets.BuildContext {
   /// Returns the navigator state from the closest [widgets.Navigator] ancestor.
   ///
@@ -80,6 +88,7 @@ extension XContextNavigator on widgets.BuildContext {
   }
 }
 
+/// `Navigator.of(context, rootNavigator: true)` as `context.rootNavigator`
 extension XContextRootNavigator on widgets.BuildContext {
   /// Returns the root navigator state.
   ///
@@ -90,6 +99,7 @@ extension XContextRootNavigator on widgets.BuildContext {
   }
 }
 
+/// `Navigator.of(context, nullOk: true)` as `context.navigatorOrNull`
 extension XContextNavigatorOrNull on widgets.BuildContext {
   /// Returns the navigator state or null from the closest [widgets.Navigator]
   /// ancestor.
@@ -101,6 +111,7 @@ extension XContextNavigatorOrNull on widgets.BuildContext {
   }
 }
 
+/// `Navigator.of(context, rootNavigator: true, nullOk: true)` as `context.rootNavigatorOrNull`
 extension XContextRootNavigatorOrNull on widgets.BuildContext {
   /// Returns the root navigator state or null.
   ///
@@ -111,6 +122,7 @@ extension XContextRootNavigatorOrNull on widgets.BuildContext {
   }
 }
 
+/// `MediaQuery.of(context)` as `context.mediaQuery`
 extension XContextMediaQuery on widgets.BuildContext {
   /// Returns the media query data from the closest [widgets.MediaQuery]
   /// ancestor.
@@ -121,6 +133,7 @@ extension XContextMediaQuery on widgets.BuildContext {
   }
 }
 
+/// `MediaQuery.of(context, nullOk: true)` as `context.mediaQueryOrNull`
 extension XContextMediaQueryOrNull on widgets.BuildContext {
   /// Returns the media query data or null from the closest [widgets.MediaQuery]
   /// ancestor.
@@ -132,6 +145,7 @@ extension XContextMediaQueryOrNull on widgets.BuildContext {
   }
 }
 
+/// `PrimaryScrollController.of(context)` as `context.primaryScrollController`
 extension XContextPrimaryScrollController on widgets.BuildContext {
   /// Returns the scroll controller from the closest
   /// [widgets.PrimaryScrollController] ancestor.
@@ -143,6 +157,7 @@ extension XContextPrimaryScrollController on widgets.BuildContext {
   }
 }
 
+/// `Scrollable.of(context)` as `context.scrollable`
 extension XContextScrollable on widgets.BuildContext {
   /// Returns the scrollable state from the closest [widgets.Scrollable]
   /// ancestor.
@@ -153,6 +168,7 @@ extension XContextScrollable on widgets.BuildContext {
   }
 }
 
+/// `FocusTraversalOrder.of(context)` as `context.focusOrder`
 extension XContextFocusOrder on widgets.BuildContext {
   /// Returns the focus order from the closest [widgets.FocusTraversalOrder]
   /// ancestor.
@@ -163,6 +179,7 @@ extension XContextFocusOrder on widgets.BuildContext {
   }
 }
 
+/// `FocusTraversalOrder.of(context, nullOk: true)` as `context.focusOrderOrNull`
 extension XContextFocusOrderOrNull on widgets.BuildContext {
   /// Returns the focus order or null from the closest
   ///[widgets.FocusTraversalOrder] ancestor.
@@ -174,6 +191,7 @@ extension XContextFocusOrderOrNull on widgets.BuildContext {
   }
 }
 
+/// `FocusTraversalGroup.of(context)` as `context.focusTraversalPolicy`
 extension XContextFocusTraversalPolicy on widgets.BuildContext {
   /// Returns the focus traversal policy from the closest
   /// [widgets.FocusTraversalGroup] ancestor.
@@ -185,6 +203,7 @@ extension XContextFocusTraversalPolicy on widgets.BuildContext {
   }
 }
 
+/// `FocusTraversalGroup.of(context, nullOk: true)` as `context.focusTraversalPolicy`
 extension XContextFocusTraversalPolicyOrNull on widgets.BuildContext {
   /// Returns the focus traversal policy or null from the closest
   /// [widgets.FocusTraversalGroup] ancestor.
@@ -196,6 +215,7 @@ extension XContextFocusTraversalPolicyOrNull on widgets.BuildContext {
   }
 }
 
+/// `Shortcuts.of(context)` as `context.shortcutManager`
 extension XContextShortcutManager on widgets.BuildContext {
   /// Returns the shortcut manager from the closest [widgets.Shortcuts]
   /// ancestor.
@@ -206,6 +226,7 @@ extension XContextShortcutManager on widgets.BuildContext {
   }
 }
 
+/// `Shortcuts.of(context, nullOk: true)` as `context.shortcutManagerOrNull`
 extension XContextShortcutManagerOrNull on widgets.BuildContext {
   /// Returns the shortcut manager or null from the closest [widgets.Shortcuts]
   /// ancestor.
@@ -217,6 +238,7 @@ extension XContextShortcutManagerOrNull on widgets.BuildContext {
   }
 }
 
+/// `ScrollConfiguration.of(context)` as `context.scrollConfiguration`
 extension XContextScrollConfiguration on widgets.BuildContext {
   /// Returns the scroll behavior from the closest
   /// [widgets.ScrollConfiguration] ancestor.
@@ -228,6 +250,7 @@ extension XContextScrollConfiguration on widgets.BuildContext {
   }
 }
 
+/// `IconTheme.of(context)` as `context.iconTheme`
 extension XContextIconTheme on widgets.BuildContext {
   /// Returns the icon theme data from the closest [widgets.IconTheme]
   /// ancestor.
@@ -238,6 +261,7 @@ extension XContextIconTheme on widgets.BuildContext {
   }
 }
 
+/// `TickerMode.of(context)` as `context.tickingEnabled`
 extension XContextTickingEnabled on widgets.BuildContext {
   /// Returns whether tickers are enabled or disabled from the closest
   /// [widgets.TickerMode] ancestor.
@@ -248,6 +272,7 @@ extension XContextTickingEnabled on widgets.BuildContext {
   }
 }
 
+/// `AnimatedList.of(context)` as `context.animatedList`
 extension XContextAnimatedList on widgets.BuildContext {
   /// Returns the animated list state from the closest [widgets.AnimatedList]
   ///ancestor.
@@ -258,6 +283,7 @@ extension XContextAnimatedList on widgets.BuildContext {
   }
 }
 
+/// `AnimatedList.of(context, nullOk: true)` as `context.animatedListOrNull`
 extension XContextAnimatedListOrNull on widgets.BuildContext {
   /// Returns the animated list state or null if not present from the closest
   /// [widgets.AnimatedList] ancestor.
@@ -269,6 +295,7 @@ extension XContextAnimatedListOrNull on widgets.BuildContext {
   }
 }
 
+/// `SliverAnimatedList.of(context)` as `context.sliverAnimatedList`
 extension XContextSliverAnimatedList on widgets.BuildContext {
   /// Returns the sliver animated list state from the closest
   /// [widgets.SliverAnimatedList] ancestor.
@@ -280,6 +307,7 @@ extension XContextSliverAnimatedList on widgets.BuildContext {
   }
 }
 
+/// `SliverAnimatedList.of(context, nullOk: true)` as `context.sliverAnimatedListOrNull`
 extension XContextSliverAnimatedListOrNull on widgets.BuildContext {
   /// Returns the sliver animated list state or null if not present from the
   /// closest [widgets.SliverAnimatedList] ancestor.
@@ -291,6 +319,7 @@ extension XContextSliverAnimatedListOrNull on widgets.BuildContext {
   }
 }
 
+/// `Focus.of(context)` as `context.focusNode`
 extension XContextFocusNode on widgets.BuildContext {
   /// Returns the focus node from the closest [widgets.Focus] ancestor.
   ///
@@ -300,6 +329,7 @@ extension XContextFocusNode on widgets.BuildContext {
   }
 }
 
+/// `Focus.of(context, nullOk: true)` as `context.focusNodeOrNull`
 extension XContextFocusNodeOrNull on widgets.BuildContext {
   /// Returns the focus node or null from the closest [widgets.Focus] ancestor.
   ///
@@ -310,6 +340,7 @@ extension XContextFocusNodeOrNull on widgets.BuildContext {
   }
 }
 
+/// `FocusScope.of(context)` as `context.focusScope`
 extension XContextFocusScope on widgets.BuildContext {
   /// Returns the focus scope node from the closest [widgets.FocusScope]
   /// ancestor.
@@ -321,6 +352,7 @@ extension XContextFocusScope on widgets.BuildContext {
   }
 }
 
+/// `Overlay.of(context)` as `context.overlay`
 extension XContextOverlay on widgets.BuildContext {
   /// Returns the overlay state from the closest [widgets.Overlay] ancestor.
   ///
@@ -331,6 +363,7 @@ extension XContextOverlay on widgets.BuildContext {
   }
 }
 
+/// `Overlay.of(context, rootOverlay: true)` as `context.rootOverlay`
 extension XContextRootOverlay on widgets.BuildContext {
   /// Returns the overlay state from the root [widgets.Overlay] ancestor.
   ///
@@ -341,6 +374,7 @@ extension XContextRootOverlay on widgets.BuildContext {
   }
 }
 
+/// `WidgetsLocalizations.of(context)` as `context.widgetsLocalizations`
 extension XContextWidgetsLocalizations on widgets.BuildContext {
   /// Returns the widgets localizations from the closest
   /// [widgets.WidgetsLocalizations] ancestor.
@@ -352,6 +386,7 @@ extension XContextWidgetsLocalizations on widgets.BuildContext {
   }
 }
 
+/// `precacheImage(..., context, ...)` as `context.precacheImage(...)`
 extension XContextPrecacheImage on widgets.BuildContext {
   /// Prefetches an image into the image cache.
   ///
@@ -370,6 +405,7 @@ extension XContextPrecacheImage on widgets.BuildContext {
   }
 }
 
+/// `showGeneralDialog(context: context, ...)` as `context.showGeneralDialog(...)`
 extension XContextShowGeneralDialog on widgets.BuildContext {
   /// Displays a dialog above the current contents of the app.
   ///
@@ -397,6 +433,7 @@ extension XContextShowGeneralDialog on widgets.BuildContext {
   }
 }
 
+/// `createLocalImageConfiguration(context, ...)` as `context.createLocalImageConfiguration(...)`
 extension XContextCreateLocalImageConfiguration on widgets.BuildContext {
   /// Creates an [widgets.ImageConfiguration] based on the context
   /// (and optionally size).
@@ -409,6 +446,7 @@ extension XContextCreateLocalImageConfiguration on widgets.BuildContext {
   }
 }
 
+/// `getAxisDirectionFromAxisReverseAndDirectionality(context, ...)` as `context.getAxisDirectionFromAxisReverseAndDirectionality(...)`
 extension XContextGetAxisDirectionFromAxisReverseAndDirectionality
     on widgets.BuildContext {
   /// Returns the [widgets.AxisDirection] in the given [widgets.Axis] in the

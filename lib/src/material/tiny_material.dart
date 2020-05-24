@@ -2,6 +2,7 @@ import 'dart:core';
 
 import 'package:flutter/material.dart' as material;
 
+/// `Scaffold.of(context)` as `context.scaf`
 extension TinyXContextScaffold on material.BuildContext {
   /// Returns the scaffold state from the closest [material.Scaffold] ancestor.
   ///
@@ -11,6 +12,7 @@ extension TinyXContextScaffold on material.BuildContext {
   }
 }
 
+/// `MaterialLocalizations.of(context)` as `context.matL10n`
 extension TinyXContextMaterialLocalizations on material.BuildContext {
   /// Returns the material localizations from the closest
   /// [material.MaterialLocalizations] ancestor.
@@ -22,6 +24,7 @@ extension TinyXContextMaterialLocalizations on material.BuildContext {
   }
 }
 
+/// `Theme.of(context)` as `context.theme`
 extension TinyXContextTheme on material.BuildContext {
   /// Returns the theme data from the closest [material.Theme] ancestor.
   ///
@@ -31,6 +34,7 @@ extension TinyXContextTheme on material.BuildContext {
   }
 }
 
+/// `showBottomSheet(context: context, ...)` as `context.showBS(...)`
 extension TinyXContextShowBottomSheet on material.BuildContext {
   /// Shows a material design bottom sheet in the nearest [material.Scaffold]
   /// ancestor.
@@ -54,6 +58,7 @@ extension TinyXContextShowBottomSheet on material.BuildContext {
   }
 }
 
+/// `showDatePicker(context: context, ...)` as `context.showDP(...)`
 extension TinyXContextShowDatePicker on material.BuildContext {
   /// Shows a dialog containing a Material Design date picker.
   ///
@@ -103,6 +108,7 @@ extension TinyXContextShowDatePicker on material.BuildContext {
   }
 }
 
+/// `showDialog(context: context, ...)` as `context.showDialog(...)`
 extension TinyXContextShowDialog on material.BuildContext {
   /// Displays a Material dialog above the current contents of the app, with
   /// Material entrance and exit animations, modal barrier color, and modal
@@ -125,6 +131,7 @@ extension TinyXContextShowDialog on material.BuildContext {
   }
 }
 
+/// `showMenu(context: context, ...)` as `context.showMenu(...)`
 extension TinyXContextShowMenu on material.BuildContext {
   /// Show a popup menu that contains the items at position.
   Future<T> showMenu<T>({
@@ -153,6 +160,7 @@ extension TinyXContextShowMenu on material.BuildContext {
   }
 }
 
+/// `showModalBottomSheet(context: context, ...)` as `context.showMBS(...)`
 extension TinyXContextShowModalBottomSheet on material.BuildContext {
   /// Shows a modal material design bottom sheet.
   ///
@@ -185,6 +193,7 @@ extension TinyXContextShowModalBottomSheet on material.BuildContext {
   }
 }
 
+/// `showTimePicker(context: context, ...)` as `context.showTP(...)`
 extension TinyXContextShowTimePicker on material.BuildContext {
   /// Shows a dialog containing a material design time picker.
   ///
