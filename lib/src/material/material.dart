@@ -219,7 +219,7 @@ extension XContextShowAboutDialog on material.BuildContext {
   /// Displays an [material.AboutDialog], which describes the application and
   /// provides a button to show licenses for software used by the application.
   ///
-  /// Equivalent to [material.material.showAboutDialog].
+  /// Equivalent to [material.showAboutDialog].
   void showAboutDialog({
     String applicationName,
     String applicationVersion,
@@ -246,7 +246,7 @@ extension XContextShowBottomSheet on material.BuildContext {
   /// Shows a material design bottom sheet in the nearest [material.Scaffold]
   /// ancestor.
   ///
-  /// Equivalent to [material.material.showBottomSheet].
+  /// Equivalent to [material.showBottomSheet].
   material.PersistentBottomSheetController<T> showBottomSheet<T>({
     @material.required material.WidgetBuilder builder,
     material.Color backgroundColor,
@@ -268,7 +268,7 @@ extension XContextShowBottomSheet on material.BuildContext {
 extension XContextShowDatePicker on material.BuildContext {
   /// Shows a dialog containing a Material Design date picker.
   ///
-  /// Equivalent to [material.material.showDatePicker].
+  /// Equivalent to [material.showDatePicker].
   Future<DateTime> showDatePicker({
     @material.required DateTime initialDate,
     @material.required DateTime firstDate,
@@ -319,7 +319,7 @@ extension XContextShowDialog on material.BuildContext {
   /// Material entrance and exit animations, modal barrier color, and modal
   /// barrier behavior (dialog is dismissible with a tap on the barrier).
   ///
-  /// Equivalent to [material.material.showDialog].
+  /// Equivalent to [material.showDialog].
   Future<T> showDialog<T>({
     bool barrierDismissible: true,
     material.WidgetBuilder builder,
@@ -340,7 +340,7 @@ extension XContextShowLicensePage on material.BuildContext {
   /// Displays a [material.LicensePage], which shows licenses for software used
   /// by the application.
   ///
-  /// Equivalent to [material.material.showLicensePage].
+  /// Equivalent to [material.showLicensePage].
   void showLicensePage(
       {String applicationName,
       String applicationVersion,
@@ -389,7 +389,7 @@ extension XContextShowMenu on material.BuildContext {
 extension XContextShowModalBottomSheet on material.BuildContext {
   /// Shows a modal material design bottom sheet.
   ///
-  /// Equivalent to [material.material.showModalBottomSheet].
+  /// Equivalent to [material.showModalBottomSheet].
   Future<T> showModalBottomSheet<T>({
     @material.required material.WidgetBuilder builder,
     material.Color backgroundColor,
@@ -422,7 +422,7 @@ extension XContextShowSearch on material.BuildContext {
   /// Shows a full screen search page and returns the search result selected by
   /// the user when the page is closed.
   ///
-  /// Equivalent to [material.material.showSearch].
+  /// Equivalent to [material.showSearch].
   Future<T> showSearch<T>({
     @material.required material.SearchDelegate<T> delegate,
     String query: '',
@@ -438,7 +438,7 @@ extension XContextShowSearch on material.BuildContext {
 extension XContextShowTimePicker on material.BuildContext {
   /// Shows a dialog containing a material design time picker.
   ///
-  /// Equivalent to [material.material.showTimePicker].
+  /// Equivalent to [material.showTimePicker].
   Future<material.TimeOfDay> showTimePicker({
     @material.required material.TimeOfDay initialTime,
     material.TransitionBuilder builder,
