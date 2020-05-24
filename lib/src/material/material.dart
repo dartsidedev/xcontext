@@ -1,174 +1,235 @@
 import 'dart:core';
 
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
 
-extension BuildContextMaterialX on BuildContext {
-  /// Returns the material ink controller from the closest [Material] ancestor.
+extension XContextMaterialInkController on material.BuildContext {
+  /// Returns the material ink controller from the closest [material.Material]
+  /// ancestor.
   ///
-  /// `context.material` is equivalent to `Material.of(context)`.
-  MaterialInkController get material {
-    return Material.of(this);
+  /// `context.material` is equivalent to [material.Material.of].
+  material.MaterialInkController get materialInkController {
+    return material.Material.of(this);
   }
+}
 
-  /// Returns the material banner theme data from the closest [MaterialBannerTheme] ancestor.
+extension XContextMaterialBannerTheme on material.BuildContext {
+  /// Returns the material banner theme data from the closest
+  /// [material.MaterialBannerTheme] ancestor.
   ///
-  /// `context.materialBannerTheme` is equivalent to `MaterialBannerTheme.of(context)`.
-  MaterialBannerThemeData get materialBannerTheme {
-    return MaterialBannerTheme.of(this);
+  /// `context.materialBannerTheme` is equivalent to
+  /// [material.MaterialBannerTheme.of].
+  material.MaterialBannerThemeData get materialBannerTheme {
+    return material.MaterialBannerTheme.of(this);
   }
+}
 
-  /// Returns the scaffold state from the closest [Scaffold] ancestor.
+extension XContextScaffold on material.BuildContext {
+  /// Returns the scaffold state from the closest [material.Scaffold] ancestor.
   ///
-  /// `context.scaffold` is equivalent to `Scaffold.of(context)`.
-  ScaffoldState get scaffold {
-    return Scaffold.of(this);
+  /// `context.scaffold` is equivalent to [material.Scaffold.of].
+  material.ScaffoldState get scaffold {
+    return material.Scaffold.of(this);
   }
+}
 
-  /// Returns the navigation rail theme data from the closest [NavigationRailTheme] ancestor.
+extension XContextNavigationRailTheme on material.BuildContext {
+  /// Returns the navigation rail theme data from the closest
+  /// [material.NavigationRailTheme] ancestor.
   ///
-  /// `context.navigationRailTheme` is equivalent to `NavigationRailTheme.of(context)`.
-  NavigationRailThemeData get navigationRailTheme {
-    return NavigationRailTheme.of(this);
+  /// `context.navigationRailTheme` is equivalent to
+  /// [material.NavigationRailTheme.of].
+  material.NavigationRailThemeData get navigationRailTheme {
+    return material.NavigationRailTheme.of(this);
   }
+}
 
-  /// Returns the bottom app bar theme from the closest [BottomAppBarTheme] ancestor.
+extension XContextBottomAppBar on material.BuildContext {
+  /// Returns the bottom app bar theme from the closest
+  /// [material.BottomAppBarTheme] ancestor.
   ///
-  /// `context.bottomAppBarTheme` is equivalent to `BottomAppBarTheme.of(context)`.
-  BottomAppBarTheme get bottomAppBarTheme {
-    return BottomAppBarTheme.of(this);
+  /// `context.bottomAppBarTheme` is equivalent to
+  /// [material.BottomAppBarTheme.of].
+  material.BottomAppBarTheme get bottomAppBarTheme {
+    return material.BottomAppBarTheme.of(this);
   }
+}
 
-  /// Returns the tab bar theme from the closest [TabBarTheme] ancestor.
+extension XContextTabBarTheme on material.BuildContext {
+  /// Returns the tab bar theme from the closest [material.TabBarTheme]
+  /// ancestor.
   ///
-  /// `context.tabBarTheme` is equivalent to `TabBarTheme.of(context)`.
-  TabBarTheme get tabBarTheme {
-    return TabBarTheme.of(this);
+  /// `context.tabBarTheme` is equivalent to [material.TabBarTheme.of].
+  material.TabBarTheme get tabBarTheme {
+    return material.TabBarTheme.of(this);
   }
+}
 
-  /// Returns the app bar theme from the closest [AppBarTheme] ancestor.
+extension XContextAppBarTheme on material.BuildContext {
+  /// Returns the app bar theme from the closest [material.AppBarTheme]
+  /// ancestor.
   ///
-  /// `context.appBarTheme` is equivalent to `AppBarTheme.of(context)`.
-  AppBarTheme get appBarTheme {
-    return AppBarTheme.of(this);
+  /// `context.appBarTheme` is equivalent to [material.AppBarTheme.of].
+  material.AppBarTheme get appBarTheme {
+    return material.AppBarTheme.of(this);
   }
+}
 
-  /// Returns the popup menu theme data from the closest [PopupMenuTheme] ancestor.
+extension XContextPopupMenuTheme on material.BuildContext {
+  /// Returns the popup menu theme data from the closest
+  /// [material.PopupMenuTheme] ancestor.
   ///
-  /// `context.popupMenuTheme` is equivalent to `PopupMenuTheme.of(context)`.
-  PopupMenuThemeData get popupMenuTheme {
-    return PopupMenuTheme.of(this);
+  /// `context.popupMenuTheme` is equivalent to [material.PopupMenuTheme.of].
+  material.PopupMenuThemeData get popupMenuTheme {
+    return material.PopupMenuTheme.of(this);
   }
+}
 
-  /// Returns the tab controller from the closest [DefaultTabController] ancestor.
+extension XContextTabController on material.BuildContext {
+  /// Returns the tab controller from the closest
+  /// [material.DefaultTabController] ancestor.
   ///
-  /// `context.tabController` is equivalent to `DefaultTabController.of(context)`.
-  TabController get tabController {
-    return DefaultTabController.of(this);
+  /// `context.tabController` is equivalent to
+  /// [material.DefaultTabController.of].
+  material.TabController get tabController {
+    return material.DefaultTabController.of(this);
   }
+}
 
-  /// Returns the tooltip theme data from the closest [TooltipTheme] ancestor.
+extension XContextTooltipTheme on material.BuildContext {
+  /// Returns the tooltip theme data from the closest [material.TooltipTheme]
+  /// ancestor.
   ///
-  /// `context.tooltipTheme` is equivalent to `TooltipTheme.of(context)`.
-  TooltipThemeData get tooltipTheme {
-    return TooltipTheme.of(this);
+  /// `context.tooltipTheme` is equivalent to [material.TooltipTheme.of].
+  material.TooltipThemeData get tooltipTheme {
+    return material.TooltipTheme.of(this);
   }
+}
 
-  /// Returns the dialog theme data from the closest [DialogTheme] ancestor.
+extension XContextDialogTheme on material.BuildContext {
+  /// Returns the dialog theme data from the closest [material.DialogTheme]
+  /// ancestor.
   ///
-  /// `context.dialogTheme` is equivalent to `DialogTheme.of(context)`.
-  DialogTheme get dialogTheme {
-    return DialogTheme.of(this);
+  /// `context.dialogTheme` is equivalent to [material.DialogTheme.of].
+  material.DialogTheme get dialogTheme {
+    return material.DialogTheme.of(this);
   }
+}
 
-  /// Returns the card theme data from the closest [CardTheme] ancestor.
+extension XContextCardTheme on material.BuildContext {
+  /// Returns the card theme data from the closest [material.CardTheme]
+  /// ancestor.
   ///
-  /// `context.cardTheme` is equivalent to `CardTheme.of(context)`.
-  CardTheme get cardTheme {
-    return CardTheme.of(this);
+  /// `context.cardTheme` is equivalent to [material.CardTheme.of].
+  material.CardTheme get cardTheme {
+    return material.CardTheme.of(this);
   }
+}
 
-  /// Returns the button theme data from the closest [ButtonTheme] ancestor.
+extension XContextButtonTheme on material.BuildContext {
+  /// Returns the button theme data from the closest [material.ButtonTheme]
+  /// ancestor.
   ///
-  /// `context.buttonTheme` is equivalent to `ButtonTheme.of(context)`.
-  ButtonThemeData get buttonTheme {
-    return ButtonTheme.of(this);
+  /// `context.buttonTheme` is equivalent to [material.ButtonTheme.of].
+  material.ButtonThemeData get buttonTheme {
+    return material.ButtonTheme.of(this);
   }
+}
 
-  /// Returns the list tile theme data from the closest [ListTileTheme] ancestor.
+extension XContextListTileTheme on material.BuildContext {
+  /// Returns the list tile theme data from the closest [material.ListTileTheme]
+  /// ancestor.
   ///
-  /// `context.listTileTheme` is equivalent to `ListTileTheme.of(context)`.
-  ListTileTheme get listTileTheme {
-    return ListTileTheme.of(this);
+  /// `context.listTileTheme` is equivalent to [material.ListTileTheme.of].
+  material.ListTileTheme get listTileTheme {
+    return material.ListTileTheme.of(this);
   }
+}
 
-  /// Returns the divider theme data from the closest [DividerTheme] ancestor.
+extension XContextDividerTheme on material.BuildContext {
+  /// Returns the divider theme data from the closest [material.DividerTheme]
+  /// ancestor.
   ///
-  /// `context.dividerTheme` is equivalent to `DividerTheme.of(context)`.
-  DividerThemeData get dividerTheme {
-    return DividerTheme.of(this);
+  /// `context.dividerTheme` is equivalent to [material.DividerTheme.of].
+  material.DividerThemeData get dividerTheme {
+    return material.DividerTheme.of(this);
   }
+}
 
-  /// Returns the material localizations from the closest [MaterialLocalizations] ancestor.
+extension XContextMaterialLocalizations on material.BuildContext {
+  /// Returns the material localizations from the closest
+  /// [material.MaterialLocalizations] ancestor.
   ///
-  /// `context.materialLocalizations` is equivalent to `MaterialLocalizations.of(context)`.
-  MaterialLocalizations get materialLocalizations {
-    return MaterialLocalizations.of(this);
+  /// `context.materialLocalizations` is equivalent to
+  /// [material.MaterialLocalizations.of].
+  material.MaterialLocalizations get materialLocalizations {
+    return material.MaterialLocalizations.of(this);
   }
+}
 
-  /// Returns the slider theme data from the closest [SliderTheme] ancestor.
+extension XContextSliderTheme on material.BuildContext {
+  /// Returns the slider theme data from the closest [material.SliderTheme]
+  /// ancestor.
   ///
-  /// `context.sliderTheme` is equivalent to `SliderTheme.of(context)`.
-  SliderThemeData get sliderTheme {
-    return SliderTheme.of(this);
+  /// `context.sliderTheme` is equivalent to [material.SliderTheme.of].
+  material.SliderThemeData get sliderTheme {
+    return material.SliderTheme.of(this);
   }
+}
 
-  /// Returns the chip theme data from the closest [ChipTheme] ancestor.
+extension XContextChipTheme on material.BuildContext {
+  /// Returns the chip theme data from the closest [material.ChipTheme]
+  /// ancestor.
   ///
-  /// `context.chipTheme` is equivalent to `ChipTheme.of(context)`.
-  ChipThemeData get chipTheme {
-    return ChipTheme.of(this);
+  /// `context.chipTheme` is equivalent to [material.ChipTheme.of].
+  material.ChipThemeData get chipTheme {
+    return material.ChipTheme.of(this);
   }
+}
 
-  /// Returns the button bar theme data from the closest [ButtonBarTheme] ancestor.
+extension XContextButtonBarTheme on material.BuildContext {
+  /// Returns the button bar theme data from the closest
+  /// [material.ButtonBarTheme] ancestor.
   ///
-  /// `context.buttonBarTheme` is equivalent to `ButtonBarTheme.of(context)`.
-  ButtonBarThemeData get buttonBarTheme {
-    return ButtonBarTheme.of(this);
+  /// `context.buttonBarTheme` is equivalent to [material.ButtonBarTheme.of].
+  material.ButtonBarThemeData get buttonBarTheme {
+    return material.ButtonBarTheme.of(this);
   }
+}
 
-  /// Returns the theme data from the closest [Theme] ancestor.
+extension XContextTheme on material.BuildContext {
+  /// Returns the theme data from the closest [material.Theme] ancestor.
   ///
-  /// `context.theme` is equivalent to `Theme.of(context)`.
-  ThemeData get theme {
-    return Theme.of(this);
+  /// `context.theme` is equivalent to [material.Theme.of].
+  material.ThemeData get theme {
+    return material.Theme.of(this);
   }
+}
 
-  /// Returns the shadow theme data from the closest [Theme] ancestor.
+extension XContextShadowTheme on material.BuildContext {
+  /// Returns the shadow theme data from the closest [material.Theme] ancestor.
   ///
-  /// `context.shadowTheme` is equivalent to `Theme.of(context, shadowThemeOnly: true)`.
-  ThemeData get shadowTheme {
-    return Theme.of(this, shadowThemeOnly: true);
+  /// `context.shadowTheme` is equivalent to
+  /// [material.Theme.of(context, shadowThemeOnly: true)].
+  material.ThemeData get shadowTheme {
+    return material.Theme.of(this, shadowThemeOnly: true);
   }
+}
 
-  /// Creates an [ImageConfiguration] based on the context (and optionally size).
-  ImageConfiguration createLocalImageConfiguration({Size size}) {
-    return _createLocalImageConfiguration(this, size: size);
-  }
-
-  /// Displays an [AboutDialog], which describes the application and provides a
-  /// button to show licenses for software used by the application.
+extension XContextShowAboutDialog on material.BuildContext {
+  /// Displays an [material.AboutDialog], which describes the application and
+  /// provides a button to show licenses for software used by the application.
   ///
-  /// Equivalent to [_showAboutDialog].
+  /// Equivalent to [material.material.showAboutDialog].
   void showAboutDialog({
     String applicationName,
     String applicationVersion,
-    Widget applicationIcon,
+    material.Widget applicationIcon,
     String applicationLegalese,
-    List<Widget> children,
+    List<material.Widget> children,
     bool useRootNavigator = true,
-    RouteSettings routeSettings,
+    material.RouteSettings routeSettings,
   }) {
-    return _showAboutDialog(
+    return material.showAboutDialog(
       context: this,
       applicationName: applicationName,
       applicationVersion: applicationVersion,
@@ -179,18 +240,21 @@ extension BuildContextMaterialX on BuildContext {
       routeSettings: routeSettings,
     );
   }
+}
 
-  /// Shows a material design bottom sheet in the nearest [Scaffold] ancestor.
+extension XContextShowBottomSheet on material.BuildContext {
+  /// Shows a material design bottom sheet in the nearest [material.Scaffold]
+  /// ancestor.
   ///
-  /// Equivalent to [_showBottomSheet].
-  PersistentBottomSheetController<T> showBottomSheet<T>({
-    @required WidgetBuilder builder,
-    Color backgroundColor,
+  /// Equivalent to [material.material.showBottomSheet].
+  material.PersistentBottomSheetController<T> showBottomSheet<T>({
+    @material.required material.WidgetBuilder builder,
+    material.Color backgroundColor,
     double elevation,
-    ShapeBorder shape,
-    Clip clipBehavior,
+    material.ShapeBorder shape,
+    material.Clip clipBehavior,
   }) {
-    return _showBottomSheet(
+    return material.showBottomSheet(
       context: this,
       builder: builder,
       backgroundColor: backgroundColor,
@@ -199,31 +263,34 @@ extension BuildContextMaterialX on BuildContext {
       clipBehavior: clipBehavior,
     );
   }
+}
 
+extension XContextShowDatePicker on material.BuildContext {
   /// Shows a dialog containing a Material Design date picker.
   ///
-  /// Equivalent to [_showDatePicker].
+  /// Equivalent to [material.material.showDatePicker].
   Future<DateTime> showDatePicker({
-    @required DateTime initialDate,
-    @required DateTime firstDate,
-    @required DateTime lastDate,
-    DatePickerEntryMode initialEntryMode = DatePickerEntryMode.calendar,
-    SelectableDayPredicate selectableDayPredicate,
+    @material.required DateTime initialDate,
+    @material.required DateTime firstDate,
+    @material.required DateTime lastDate,
+    material.DatePickerEntryMode initialEntryMode =
+        material.DatePickerEntryMode.calendar,
+    material.SelectableDayPredicate selectableDayPredicate,
     String helpText,
     String cancelText,
     String confirmText,
-    Locale locale,
+    material.Locale locale,
     bool useRootNavigator = true,
-    RouteSettings routeSettings,
-    TextDirection textDirection,
-    TransitionBuilder builder,
-    DatePickerMode initialDatePickerMode = DatePickerMode.day,
+    material.RouteSettings routeSettings,
+    material.TextDirection textDirection,
+    material.TransitionBuilder builder,
+    material.DatePickerMode initialDatePickerMode = material.DatePickerMode.day,
     String errorFormatText,
     String errorInvalidText,
     String fieldHintText,
     String fieldLabelText,
   }) {
-    return _showDatePicker(
+    return material.showDatePicker(
       context: this,
       initialDate: initialDate,
       firstDate: firstDate,
@@ -245,65 +312,42 @@ extension BuildContextMaterialX on BuildContext {
       fieldLabelText: fieldLabelText,
     );
   }
+}
 
+extension XContextShowDialog on material.BuildContext {
   /// Displays a Material dialog above the current contents of the app, with
   /// Material entrance and exit animations, modal barrier color, and modal
   /// barrier behavior (dialog is dismissible with a tap on the barrier).
   ///
-  /// Equivalent to [_showDialog].
+  /// Equivalent to [material.material.showDialog].
   Future<T> showDialog<T>({
     bool barrierDismissible: true,
-    WidgetBuilder builder,
+    material.WidgetBuilder builder,
     bool useRootNavigator: true,
-    RouteSettings routeSettings,
+    material.RouteSettings routeSettings,
   }) {
-    return _showDialog<T>(
+    return material.showDialog<T>(
       context: this,
       barrierDismissible: barrierDismissible,
-      child: null,
       builder: builder,
       useRootNavigator: useRootNavigator,
       routeSettings: routeSettings,
     );
   }
+}
 
-  /// Displays a dialog above the current contents of the app.
+extension XContextShowLicensePage on material.BuildContext {
+  /// Displays a [material.LicensePage], which shows licenses for software used
+  /// by the application.
   ///
-  /// Equivalent to [_showGeneralDialog].
-  Future<T> showGeneralDialog<T>({
-    @required RoutePageBuilder pageBuilder,
-    bool barrierDismissible,
-    String barrierLabel,
-    Color barrierColor,
-    Duration transitionDuration,
-    RouteTransitionsBuilder transitionBuilder,
-    bool useRootNavigator: true,
-    RouteSettings routeSettings,
-  }) {
-    return _showGeneralDialog<T>(
-      context: this,
-      pageBuilder: pageBuilder,
-      barrierDismissible: barrierDismissible,
-      barrierLabel: barrierLabel,
-      barrierColor: barrierColor,
-      transitionDuration: transitionDuration,
-      transitionBuilder: transitionBuilder,
-      useRootNavigator: useRootNavigator,
-      routeSettings: routeSettings,
-    );
-  }
-
-  /// Displays a [LicensePage], which shows licenses for software used by the
-  /// application.
-  ///
-  /// Equivalent to [_showLicensePage].
+  /// Equivalent to [material.material.showLicensePage].
   void showLicensePage(
       {String applicationName,
       String applicationVersion,
-      Widget applicationIcon,
+      material.Widget applicationIcon,
       String applicationLegalese,
       bool useRootNavigator: false}) {
-    return _showLicensePage(
+    return material.showLicensePage(
       context: this,
       applicationName: applicationName,
       applicationVersion: applicationVersion,
@@ -312,19 +356,22 @@ extension BuildContextMaterialX on BuildContext {
       useRootNavigator: useRootNavigator,
     );
   }
+}
 
+extension XContextShowMenu on material.BuildContext {
   /// Show a popup menu that contains the items at position.
-  Future<T> showMenu<T>(
-      {@required RelativeRect position,
-      @required List<PopupMenuEntry<T>> items,
-      T initialValue,
-      double elevation,
-      String semanticLabel,
-      ShapeBorder shape,
-      Color color,
-      bool captureInheritedThemes: true,
-      bool useRootNavigator: false}) {
-    return _showMenu<T>(
+  Future<T> showMenu<T>({
+    @material.required material.RelativeRect position,
+    @material.required List<material.PopupMenuEntry<T>> items,
+    T initialValue,
+    double elevation,
+    String semanticLabel,
+    material.ShapeBorder shape,
+    material.Color color,
+    bool captureInheritedThemes: true,
+    bool useRootNavigator: false,
+  }) {
+    return material.showMenu<T>(
       context: this,
       position: position,
       items: items,
@@ -337,23 +384,25 @@ extension BuildContextMaterialX on BuildContext {
       useRootNavigator: useRootNavigator,
     );
   }
+}
 
+extension XContextShowModalBottomSheet on material.BuildContext {
   /// Shows a modal material design bottom sheet.
   ///
-  /// Equivalent to [_showModalBottomSheet].
+  /// Equivalent to [material.material.showModalBottomSheet].
   Future<T> showModalBottomSheet<T>({
-    @required WidgetBuilder builder,
-    Color backgroundColor,
+    @material.required material.WidgetBuilder builder,
+    material.Color backgroundColor,
     double elevation,
-    ShapeBorder shape,
-    Clip clipBehavior,
-    Color barrierColor,
+    material.ShapeBorder shape,
+    material.Clip clipBehavior,
+    material.Color barrierColor,
     bool isScrollControlled: false,
     bool useRootNavigator: false,
     bool isDismissible: true,
     bool enableDrag: true,
   }) {
-    return _showModalBottomSheet(
+    return material.showModalBottomSheet(
       context: this,
       builder: builder,
       backgroundColor: backgroundColor,
@@ -367,31 +416,36 @@ extension BuildContextMaterialX on BuildContext {
       enableDrag: enableDrag,
     );
   }
+}
 
+extension XContextShowSearch on material.BuildContext {
   /// Shows a full screen search page and returns the search result selected by
   /// the user when the page is closed.
   ///
-  /// Equivalent to [_showSearch].
+  /// Equivalent to [material.material.showSearch].
   Future<T> showSearch<T>({
-    @required SearchDelegate<T> delegate,
+    @material.required material.SearchDelegate<T> delegate,
     String query: '',
   }) {
-    return _showSearch(
+    return material.showSearch(
       context: this,
       delegate: delegate,
       query: query,
     );
   }
+}
 
+extension XContextShowTimePicker on material.BuildContext {
   /// Shows a dialog containing a material design time picker.
   ///
-  /// Equivalent to [_showTimePicker].
-  Future<TimeOfDay> showTimePicker(
-      {@required TimeOfDay initialTime,
-      TransitionBuilder builder,
-      bool useRootNavigator: true,
-      RouteSettings routeSettings}) {
-    return _showTimePicker(
+  /// Equivalent to [material.material.showTimePicker].
+  Future<material.TimeOfDay> showTimePicker({
+    @material.required material.TimeOfDay initialTime,
+    material.TransitionBuilder builder,
+    bool useRootNavigator: true,
+    material.RouteSettings routeSettings,
+  }) {
+    return material.showTimePicker(
       context: this,
       initialTime: initialTime,
       builder: builder,
@@ -400,15 +454,3 @@ extension BuildContextMaterialX on BuildContext {
     );
   }
 }
-
-const _createLocalImageConfiguration = createLocalImageConfiguration;
-const _showAboutDialog = showAboutDialog;
-const _showBottomSheet = showBottomSheet;
-const _showDatePicker = showDatePicker;
-const _showDialog = showDialog;
-const _showGeneralDialog = showGeneralDialog;
-const _showLicensePage = showLicensePage;
-const _showMenu = showMenu;
-const _showModalBottomSheet = showModalBottomSheet;
-const _showSearch = showSearch;
-const _showTimePicker = showTimePicker;

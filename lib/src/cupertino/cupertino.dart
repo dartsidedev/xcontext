@@ -1,56 +1,71 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/cupertino.dart' as cupertino;
 
-extension BuildContextCupertinoX on BuildContext {
-  /// Returns the cupertino user interface level data from the closest [CupertinoUserInterfaceLevel] ancestor.
+extension XContextCupertinoUserInterfaceLevel on cupertino.BuildContext {
+  /// Returns the cupertino user interface level data from the closest
+  /// [cupertino.CupertinoUserInterfaceLevel] ancestor.
   ///
-  /// `context.cupertinoUserInterfaceLevel` is equivalent to `CupertinoUserInterfaceLevel.of(context)`.
-  CupertinoUserInterfaceLevelData get cupertinoUserInterfaceLevel {
-    return CupertinoUserInterfaceLevel.of(this);
+  /// `context.cupertinoUserInterfaceLevel` is equivalent to
+  /// [cupertino.CupertinoUserInterfaceLevel.of].
+  cupertino.CupertinoUserInterfaceLevelData get cupertinoUserInterfaceLevel {
+    return cupertino.CupertinoUserInterfaceLevel.of(this);
   }
+}
 
-  /// Returns the cupertino theme data from the closest [CupertinoTheme] ancestor.
+extension XContextCupertinoTheme on cupertino.BuildContext {
+  /// Returns the cupertino theme data from the closest
+  /// [cupertino.CupertinoTheme] ancestor.
   ///
-  /// `context.cupertinoTheme` is equivalent to `CupertinoTheme.of(context)`.
-  CupertinoThemeData get cupertinoTheme {
-    return CupertinoTheme.of(this);
+  /// `context.cupertinoTheme` is equivalent to
+  /// [cupertino.CupertinoTheme.of].
+  cupertino.CupertinoThemeData get cupertinoTheme {
+    return cupertino.CupertinoTheme.of(this);
   }
+}
 
-  /// Returns the cupertino localizations from the closest [CupertinoLocalizations] ancestor.
+extension XContextCupertinoLocalizations on cupertino.BuildContext {
+  /// Returns the cupertino localizations from the closest
+  /// [cupertino.CupertinoLocalizations] ancestor.
   ///
-  /// `context.cupertinoLocalizations` is equivalent to `CupertinoLocalizations.of(context)`.
-  CupertinoLocalizations get cupertinoLocalizations {
-    return CupertinoLocalizations.of(this);
+  /// `context.cupertinoLocalizations` is equivalent to
+  /// [cupertino.CupertinoLocalizations.of].
+  cupertino.CupertinoLocalizations get cupertinoLocalizations {
+    return cupertino.CupertinoLocalizations.of(this);
   }
+}
 
+extension XContextShowCupertinoDialog on cupertino.BuildContext {
   /// Displays an iOS-style dialog above the current contents of the app, with
   /// iOS-style entrance and exit animations, modal barrier color, and modal
   /// barrier behavior (the dialog is not dismissible with a tap on the barrier).
   ///
-  /// Equivalent to [_showCupertinoDialog].
+  /// Equivalent to [cupertino.showCupertinoDialog].
   Future<T> showCupertinoDialog<T>({
-    @required WidgetBuilder builder,
+    @cupertino.required cupertino.WidgetBuilder builder,
     bool useRootNavigator: true,
-    RouteSettings routeSettings
+    cupertino.RouteSettings routeSettings,
   }) {
-    return _showCupertinoDialog<T>(
+    return cupertino.showCupertinoDialog<T>(
+      context: this,
       builder: builder,
       useRootNavigator: useRootNavigator,
       routeSettings: routeSettings,
     );
   }
+}
 
+extension XContextShowCupertinoModalPopup on cupertino.BuildContext {
   /// Shows a modal iOS-style popup that slides up from the bottom of the screen.
   ///
-  /// Equivalent to [_showCupertinoModalPopup].
+  /// Equivalent to [cupertino.showCupertinoModalPopup].
   Future<T> showCupertinoModalPopup<T>({
-    @required WidgetBuilder builder,
+    @cupertino.required cupertino.WidgetBuilder builder,
     ImageFilter filter,
     bool useRootNavigator: true,
-    bool semanticsDismissible
+    bool semanticsDismissible,
   }) {
-    return _showCupertinoModalPopup<T>(
+    return cupertino.showCupertinoModalPopup<T>(
       context: this,
       builder: builder,
       filter: filter,
@@ -58,66 +73,4 @@ extension BuildContextCupertinoX on BuildContext {
       semanticsDismissible: semanticsDismissible,
     );
   }
-
-  /// Displays a dialog above the current contents of the app.
-  ///
-  /// Equivalent to [_showGeneralDialog].
-  Future<T> showGeneralDialog<T>({
-    @required RoutePageBuilder pageBuilder,
-    bool barrierDismissible,
-    String barrierLabel,
-    Color barrierColor,
-    Duration transitionDuration,
-    RouteTransitionsBuilder transitionBuilder,
-    bool useRootNavigator: true,
-    RouteSettings routeSettings
-  }) {
-    return _showGeneralDialog<T>(
-      context: this,
-      pageBuilder: pageBuilder,
-      barrierDismissible: barrierDismissible,
-      barrierLabel: barrierLabel,
-      barrierColor: barrierColor,
-      transitionDuration: transitionDuration,
-      transitionBuilder: transitionBuilder,
-      useRootNavigator: useRootNavigator,
-      routeSettings: routeSettings,
-    );
-  }
-
-  /// Returns the [AxisDirection] in the given [Axis] in the current
-  /// [Directionality] (or the reverse if `reverse` is true).
-  ///
-  /// Equivalent to [_getAxisDirectionFromAxisReverseAndDirectionality].
-  AxisDirection getAxisDirectionFromAxisReverseAndDirectionality(
-    Axis axis,
-    bool reverse,
-  ) {
-    return _getAxisDirectionFromAxisReverseAndDirectionality(
-      this,
-      axis,
-      reverse,
-    );
-  }
-
-  /// Prefetches an image into the image cache.
-  Future<void> precacheImage(
-    ImageProvider provider, {
-    Size size,
-    ImageErrorListener onError,
-  }) {
-    return _precacheImage(
-      provider,
-      this,
-      size: size,
-      onError: onError,
-    );
-  }
 }
-
-const _showCupertinoDialog = showCupertinoDialog;
-const _showCupertinoModalPopup = showCupertinoModalPopup;
-const _showGeneralDialog = showGeneralDialog;
-const _precacheImage = precacheImage;
-const _getAxisDirectionFromAxisReverseAndDirectionality =
-    getAxisDirectionFromAxisReverseAndDirectionality;
