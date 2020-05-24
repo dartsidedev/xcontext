@@ -1,3 +1,3 @@
-## [0.0.1] - TODO: Add release date.
+## 0.0.1+1 - May 24, 2020
 
-* TODO: Describe initial release.
+Initial release. This simple package adds static extension methods and getters to the `BuildContext context` object from the `widgets`, `material`, and `cupertino` libraries.

@@ -1,7 +1,3 @@
-library xcontext;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'cupertino.dart';
+export 'material.dart';
+export 'widgets.dart';
