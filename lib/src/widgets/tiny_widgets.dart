@@ -6,7 +6,7 @@ extension TinyXContextFormState on widgets.BuildContext {
   /// Returns the form state from the closest [widgets.Form] ancestor.
   ///
   /// `context.form` is equivalent to [widgets.Form.of].
-  widgets.FormState get form {
+  widgets.FormState? get form {
     return widgets.Form.of(this);
   }
 }
@@ -71,7 +71,7 @@ extension TinyXContextOverlay on widgets.BuildContext {
   ///
   /// `context.overlay` is equivalent to
   /// [widgets.Overlay.of].
-  widgets.OverlayState get overlay {
+  widgets.OverlayState? get overlay {
     return widgets.Overlay.of(this);
   }
 }
@@ -82,7 +82,7 @@ extension TinyXContextRootOverlay on widgets.BuildContext {
   ///
   /// `context.rootOverlay` is equivalent to
   /// [widgets.Overlay.of] with `rootOverlay: true`.
-  widgets.OverlayState get rootOverlay {
+  widgets.OverlayState? get rootOverlay {
     return widgets.Overlay.of(this, rootOverlay: true);
   }
 }
@@ -104,15 +104,15 @@ extension TinyXContextShowGeneralDialog on widgets.BuildContext {
   /// Displays a dialog above the current contents of the app.
   ///
   /// Equivalent to [widgets.showGeneralDialog].
-  Future<T> showGenDialog<T>(
-      {@widgets.required widgets.RoutePageBuilder pageBuilder,
-      bool barrierDismissible,
-      String barrierLabel,
-      widgets.Color barrierColor,
-      Duration transitionDuration,
-      widgets.RouteTransitionsBuilder transitionBuilder,
+  Future<T?> showGenDialog<T>(
+      {required widgets.RoutePageBuilder pageBuilder,
+      required bool barrierDismissible,
+      String? barrierLabel,
+      required widgets.Color barrierColor,
+      required Duration transitionDuration,
+      widgets.RouteTransitionsBuilder? transitionBuilder,
       bool useRootNavigator: true,
-      widgets.RouteSettings routeSettings}) {
+      widgets.RouteSettings? routeSettings}) {
     return widgets.showGeneralDialog<T>(
       context: this,
       pageBuilder: pageBuilder,

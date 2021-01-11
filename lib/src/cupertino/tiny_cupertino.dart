@@ -45,10 +45,10 @@ extension TinyXContextShowCupertinoDialog on cupertino.BuildContext {
   /// barrier behavior (the dialog is not dismissible with a tap on the barrier).
   ///
   /// Equivalent to [cupertino.showCupertinoDialog].
-  Future<T> showCupDialog<T>({
-    @cupertino.required cupertino.WidgetBuilder builder,
+  Future<T?> showCupDialog<T>({
+    required cupertino.WidgetBuilder builder,
     bool useRootNavigator: true,
-    cupertino.RouteSettings routeSettings,
+    cupertino.RouteSettings? routeSettings,
   }) {
     return cupertino.showCupertinoDialog<T>(
       context: this,
@@ -64,11 +64,11 @@ extension TinyXContextShowCupertinoModalPopup on cupertino.BuildContext {
   /// Shows a modal iOS-style popup that slides up from the bottom of the screen.
   ///
   /// Equivalent to [cupertino.showCupertinoModalPopup].
-  Future<T> showCupModalPopup<T>({
-    @cupertino.required cupertino.WidgetBuilder builder,
-    ImageFilter filter,
+  Future<T?> showCupModalPopup<T>({
+    required cupertino.WidgetBuilder builder,
+    ImageFilter? filter,
     bool useRootNavigator: true,
-    bool semanticsDismissible,
+    bool? semanticsDismissible,
   }) {
     return cupertino.showCupertinoModalPopup<T>(
       context: this,

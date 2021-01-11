@@ -7,7 +7,7 @@ extension XContextPageStorage on widgets.BuildContext {
   /// ancestor.
   ///
   /// `context.pageStorage` is equivalent to [widgets.PageStorage.of].
-  widgets.PageStorageBucket get pageStorage {
+  widgets.PageStorageBucket? get pageStorage {
     return widgets.PageStorage.of(this);
   }
 }
@@ -56,24 +56,12 @@ extension XContextActionDispatcher on widgets.BuildContext {
   }
 }
 
-/// `Actions.of(context, nullOk: true)` as `actionDispatcherOrNull.`
-extension XContextActionDispatcherOrNull on widgets.BuildContext {
-  /// Returns the action dispatcher or null from the closest [widgets.Actions]
-  /// ancestor.
-  ///
-  /// `context.actionDispatcherOrNull` is equivalent to [widgets.Actions.of]
-  /// with `nullOk: true`.
-  widgets.ActionDispatcher get actionDispatcherOrNull {
-    return widgets.Actions.of(this, nullOk: true);
-  }
-}
-
 /// `Form.of(context)` as `context.form`
 extension XContextFormState on widgets.BuildContext {
   /// Returns the form state from the closest [widgets.Form] ancestor.
   ///
   /// `context.form` is equivalent to [widgets.Form.of].
-  widgets.FormState get form {
+  widgets.FormState? get form {
     return widgets.Form.of(this);
   }
 }
@@ -99,29 +87,6 @@ extension XContextRootNavigator on widgets.BuildContext {
   }
 }
 
-/// `Navigator.of(context, nullOk: true)` as `context.navigatorOrNull`
-extension XContextNavigatorOrNull on widgets.BuildContext {
-  /// Returns the navigator state or null from the closest [widgets.Navigator]
-  /// ancestor.
-  ///
-  /// `context.navigatorOrNull` is equivalent to [widgets.Navigator.of]
-  /// with `nullOk: true`.
-  widgets.NavigatorState get navigatorOrNull {
-    return widgets.Navigator.of(this, nullOk: true);
-  }
-}
-
-/// `Navigator.of(context, rootNavigator: true, nullOk: true)` as `context.rootNavigatorOrNull`
-extension XContextRootNavigatorOrNull on widgets.BuildContext {
-  /// Returns the root navigator state or null.
-  ///
-  /// `context.rootNavigatorOrNull` is equivalent to [widgets.Navigator.of]
-  /// with `rootNavigator: true`, and `nullOk: true`.
-  widgets.NavigatorState get rootNavigatorOrNull {
-    return widgets.Navigator.of(this, rootNavigator: true, nullOk: true);
-  }
-}
-
 /// `MediaQuery.of(context)` as `context.mediaQuery`
 extension XContextMediaQuery on widgets.BuildContext {
   /// Returns the media query data from the closest [widgets.MediaQuery]
@@ -133,18 +98,6 @@ extension XContextMediaQuery on widgets.BuildContext {
   }
 }
 
-/// `MediaQuery.of(context, nullOk: true)` as `context.mediaQueryOrNull`
-extension XContextMediaQueryOrNull on widgets.BuildContext {
-  /// Returns the media query data or null from the closest [widgets.MediaQuery]
-  /// ancestor.
-  ///
-  /// `context.mediaQueryOrNull` is equivalent to [widgets.MediaQuery.of] with
-  /// `nullOk: true`.
-  widgets.MediaQueryData get mediaQueryOrNull {
-    return widgets.MediaQuery.of(this, nullOk: true);
-  }
-}
-
 /// `PrimaryScrollController.of(context)` as `context.primaryScrollController`
 extension XContextPrimaryScrollController on widgets.BuildContext {
   /// Returns the scroll controller from the closest
@@ -152,7 +105,7 @@ extension XContextPrimaryScrollController on widgets.BuildContext {
   ///
   /// `context.primaryScrollController` is equivalent to
   /// [widgets.PrimaryScrollController.of].
-  widgets.ScrollController get primaryScrollController {
+  widgets.ScrollController? get primaryScrollController {
     return widgets.PrimaryScrollController.of(this);
   }
 }
@@ -163,7 +116,7 @@ extension XContextScrollable on widgets.BuildContext {
   /// ancestor.
   ///
   /// `context.scrollable` is equivalent to [widgets.Scrollable.of].
-  widgets.ScrollableState get scrollable {
+  widgets.ScrollableState? get scrollable {
     return widgets.Scrollable.of(this);
   }
 }
@@ -179,18 +132,6 @@ extension XContextFocusOrder on widgets.BuildContext {
   }
 }
 
-/// `FocusTraversalOrder.of(context, nullOk: true)` as `context.focusOrderOrNull`
-extension XContextFocusOrderOrNull on widgets.BuildContext {
-  /// Returns the focus order or null from the closest
-  ///[widgets.FocusTraversalOrder] ancestor.
-  ///
-  /// `context.focusOrderOrNull` is equivalent to
-  /// [widgets.FocusTraversalOrder.of] with `nullOk: true`.
-  widgets.FocusOrder get focusOrderOrNull {
-    return widgets.FocusTraversalOrder.of(this, nullOk: true);
-  }
-}
-
 /// `FocusTraversalGroup.of(context)` as `context.focusTraversalPolicy`
 extension XContextFocusTraversalPolicy on widgets.BuildContext {
   /// Returns the focus traversal policy from the closest
@@ -203,18 +144,6 @@ extension XContextFocusTraversalPolicy on widgets.BuildContext {
   }
 }
 
-/// `FocusTraversalGroup.of(context, nullOk: true)` as `context.focusTraversalPolicy`
-extension XContextFocusTraversalPolicyOrNull on widgets.BuildContext {
-  /// Returns the focus traversal policy or null from the closest
-  /// [widgets.FocusTraversalGroup] ancestor.
-  ///
-  /// `context.focusTraversalPolicyOrNull` is equivalent to
-  /// [widgets.FocusTraversalGroup.of] with `nullOk: true`.
-  widgets.FocusTraversalPolicy get focusTraversalPolicyOrNull {
-    return widgets.FocusTraversalGroup.of(this, nullOk: true);
-  }
-}
-
 /// `Shortcuts.of(context)` as `context.shortcutManager`
 extension XContextShortcutManager on widgets.BuildContext {
   /// Returns the shortcut manager from the closest [widgets.Shortcuts]
@@ -223,18 +152,6 @@ extension XContextShortcutManager on widgets.BuildContext {
   /// `context.shortcutManager` is equivalent to [widgets.Shortcuts.of].
   widgets.ShortcutManager get shortcutManager {
     return widgets.Shortcuts.of(this);
-  }
-}
-
-/// `Shortcuts.of(context, nullOk: true)` as `context.shortcutManagerOrNull`
-extension XContextShortcutManagerOrNull on widgets.BuildContext {
-  /// Returns the shortcut manager or null from the closest [widgets.Shortcuts]
-  /// ancestor.
-  ///
-  /// `context.shortcutManagerOrNull` is equivalent to
-  /// [widgets.Shortcuts.of] with `nullOk: true`.
-  widgets.ShortcutManager get shortcutManagerOrNull {
-    return widgets.Shortcuts.of(this, nullOk: true);
   }
 }
 
@@ -283,18 +200,6 @@ extension XContextAnimatedList on widgets.BuildContext {
   }
 }
 
-/// `AnimatedList.of(context, nullOk: true)` as `context.animatedListOrNull`
-extension XContextAnimatedListOrNull on widgets.BuildContext {
-  /// Returns the animated list state or null if not present from the closest
-  /// [widgets.AnimatedList] ancestor.
-  ///
-  /// `context.animatedListOrNull` is equivalent to
-  /// [widgets.AnimatedList.of] with `nullOk: true`.
-  widgets.AnimatedListState get animatedListOrNull {
-    return widgets.AnimatedList.of(this, nullOk: true);
-  }
-}
-
 /// `SliverAnimatedList.of(context)` as `context.sliverAnimatedList`
 extension XContextSliverAnimatedList on widgets.BuildContext {
   /// Returns the sliver animated list state from the closest
@@ -307,18 +212,6 @@ extension XContextSliverAnimatedList on widgets.BuildContext {
   }
 }
 
-/// `SliverAnimatedList.of(context, nullOk: true)` as `context.sliverAnimatedListOrNull`
-extension XContextSliverAnimatedListOrNull on widgets.BuildContext {
-  /// Returns the sliver animated list state or null if not present from the
-  /// closest [widgets.SliverAnimatedList] ancestor.
-  ///
-  /// `context.sliverAnimatedListOrNull` is equivalent to
-  /// [widgets.SliverAnimatedList.of] with `nullOk: true`.
-  widgets.SliverAnimatedListState get sliverAnimatedListOrNull {
-    return widgets.SliverAnimatedList.of(this, nullOk: true);
-  }
-}
-
 /// `Focus.of(context)` as `context.focusNode`
 extension XContextFocusNode on widgets.BuildContext {
   /// Returns the focus node from the closest [widgets.Focus] ancestor.
@@ -326,17 +219,6 @@ extension XContextFocusNode on widgets.BuildContext {
   /// `context.focusNode` is equivalent to [widgets.Focus.of]`.
   widgets.FocusNode get focusNode {
     return widgets.Focus.of(this);
-  }
-}
-
-/// `Focus.of(context, nullOk: true)` as `context.focusNodeOrNull`
-extension XContextFocusNodeOrNull on widgets.BuildContext {
-  /// Returns the focus node or null from the closest [widgets.Focus] ancestor.
-  ///
-  /// `context.focusNodeOrNull` is equivalent to
-  /// [widgets.Focus.of] with `nullOk: true`.
-  widgets.FocusNode get focusNodeOrNull {
-    return widgets.Focus.of(this, nullOk: true);
   }
 }
 
@@ -358,7 +240,7 @@ extension XContextOverlay on widgets.BuildContext {
   ///
   /// `context.overlay` is equivalent to
   /// [widgets.Overlay.of].
-  widgets.OverlayState get overlay {
+  widgets.OverlayState? get overlay {
     return widgets.Overlay.of(this);
   }
 }
@@ -369,7 +251,7 @@ extension XContextRootOverlay on widgets.BuildContext {
   ///
   /// `context.rootOverlay` is equivalent to
   /// [widgets.Overlay.of] with `rootOverlay: true`.
-  widgets.OverlayState get rootOverlay {
+  widgets.OverlayState? get rootOverlay {
     return widgets.Overlay.of(this, rootOverlay: true);
   }
 }
@@ -393,8 +275,8 @@ extension XContextPrecacheImage on widgets.BuildContext {
   /// Equivalent to [widgets.precacheImage].
   Future<void> precacheImage(
     widgets.ImageProvider provider, {
-    widgets.Size size,
-    widgets.ImageErrorListener onError,
+    widgets.Size? size,
+    widgets.ImageErrorListener? onError,
   }) {
     return widgets.precacheImage(
       provider,
@@ -410,15 +292,15 @@ extension XContextShowGeneralDialog on widgets.BuildContext {
   /// Displays a dialog above the current contents of the app.
   ///
   /// Equivalent to [widgets.showGeneralDialog].
-  Future<T> showGeneralDialog<T>(
-      {@widgets.required widgets.RoutePageBuilder pageBuilder,
-      bool barrierDismissible,
-      String barrierLabel,
-      widgets.Color barrierColor,
-      Duration transitionDuration,
-      widgets.RouteTransitionsBuilder transitionBuilder,
+  Future<T?> showGeneralDialog<T>(
+      {required widgets.RoutePageBuilder pageBuilder,
+      required bool barrierDismissible,
+      String? barrierLabel,
+      required widgets.Color barrierColor,
+      required Duration transitionDuration,
+      widgets.RouteTransitionsBuilder? transitionBuilder,
       bool useRootNavigator: true,
-      widgets.RouteSettings routeSettings}) {
+      widgets.RouteSettings? routeSettings}) {
     return widgets.showGeneralDialog<T>(
       context: this,
       pageBuilder: pageBuilder,
@@ -440,7 +322,7 @@ extension XContextCreateLocalImageConfiguration on widgets.BuildContext {
   ///
   /// Equivalent to [widgets.createLocalImageConfiguration].
   widgets.ImageConfiguration createLocalImageConfiguration({
-    widgets.Size size,
+    widgets.Size? size,
   }) {
     return widgets.createLocalImageConfiguration(this, size: size);
   }

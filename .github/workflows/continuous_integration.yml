@@ -11,16 +11,15 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Ensure idiomatic Dart source code formatting
-        run: dartfmt --set-exit-if-changed .
+        run: dartfmt -w --set-exit-if-changed .
 
-  # We aren't running tests at the moment.
+  # We don't have any meaningful tests at the moment.
 
   publish:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs: [format]
     if: github.ref == 'refs/heads/master'
-    continue-on-error: true
     container:
       image:  google/dart:beta
     steps:
@@ -30,6 +29,6 @@ jobs:
           mkdir -p ~/.pub-cache
           echo '${{ secrets.PUB_CREDENTIALS_JSON }}' > ~/.pub-cache/credentials.json
       - name: Publish the package to pub.dartlang.org
-        run: pub publish --force
+        run: pub publish --force || true
       - name: Delete credentials
         run: rm ~/.pub-cache/credentials.json

@@ -75,14 +75,15 @@ class Example extends StatelessWidget {
             color: Colors.green,
             onPressed: () {
               context.showAboutDialog(
-                  applicationName: 'xcontext example app',
-                  applicationIcon: FlutterLogo(),
-                  applicationLegalese: 'Copyright 2020',
-                  applicationVersion: '1.2.3',
-                  children: [
-                    Text('Thank you for using this package!'),
-                    Text('❤️'),
-                  ]);
+                applicationName: 'xcontext example app',
+                applicationIcon: FlutterLogo(),
+                applicationLegalese: 'Copyright 2020',
+                applicationVersion: '1.2.3',
+                children: [
+                  Text('Thank you for using this package!'),
+                  Text('❤️'),
+                ],
+              );
             },
             child: Text('Show About Dialog'),
           ),

@@ -41,11 +41,11 @@ extension TinyXContextShowBottomSheet on material.BuildContext {
   ///
   /// Equivalent to [material.showBottomSheet].
   material.PersistentBottomSheetController<T> showBS<T>({
-    @material.required material.WidgetBuilder builder,
-    material.Color backgroundColor,
-    double elevation,
-    material.ShapeBorder shape,
-    material.Clip clipBehavior,
+    required material.WidgetBuilder builder,
+    material.Color? backgroundColor,
+    double? elevation,
+    material.ShapeBorder? shape,
+    material.Clip? clipBehavior,
   }) {
     return material.showBottomSheet(
       context: this,
@@ -63,26 +63,26 @@ extension TinyXContextShowDatePicker on material.BuildContext {
   /// Shows a dialog containing a Material Design date picker.
   ///
   /// Equivalent to [material.showDatePicker].
-  Future<DateTime> showDP({
-    @material.required DateTime initialDate,
-    @material.required DateTime firstDate,
-    @material.required DateTime lastDate,
+  Future<DateTime?> showDP({
+    required DateTime initialDate,
+    required DateTime firstDate,
+    required DateTime lastDate,
     material.DatePickerEntryMode initialEntryMode =
         material.DatePickerEntryMode.calendar,
-    material.SelectableDayPredicate selectableDayPredicate,
-    String helpText,
-    String cancelText,
-    String confirmText,
-    material.Locale locale,
+    material.SelectableDayPredicate? selectableDayPredicate,
+    String? helpText,
+    String? cancelText,
+    String? confirmText,
+    material.Locale? locale,
     bool useRootNavigator = true,
-    material.RouteSettings routeSettings,
-    material.TextDirection textDirection,
-    material.TransitionBuilder builder,
+    material.RouteSettings? routeSettings,
+    material.TextDirection? textDirection,
+    material.TransitionBuilder? builder,
     material.DatePickerMode initialDatePickerMode = material.DatePickerMode.day,
-    String errorFormatText,
-    String errorInvalidText,
-    String fieldHintText,
-    String fieldLabelText,
+    String? errorFormatText,
+    String? errorInvalidText,
+    String? fieldHintText,
+    String? fieldLabelText,
   }) {
     return material.showDatePicker(
       context: this,
@@ -115,11 +115,11 @@ extension TinyXContextShowDialog on material.BuildContext {
   /// barrier behavior (dialog is dismissible with a tap on the barrier).
   ///
   /// Equivalent to [material.showDialog].
-  Future<T> showDialog<T>({
+  Future<T?> showDialog<T>({
     bool barrierDismissible: true,
-    material.WidgetBuilder builder,
+    material.WidgetBuilder? builder,
     bool useRootNavigator: true,
-    material.RouteSettings routeSettings,
+    material.RouteSettings? routeSettings,
   }) {
     return material.showDialog<T>(
       context: this,
@@ -134,15 +134,14 @@ extension TinyXContextShowDialog on material.BuildContext {
 /// `showMenu(context: context, ...)` as `context.showMenu(...)`
 extension TinyXContextShowMenu on material.BuildContext {
   /// Show a popup menu that contains the items at position.
-  Future<T> showMenu<T>({
-    @material.required material.RelativeRect position,
-    @material.required List<material.PopupMenuEntry<T>> items,
-    T initialValue,
-    double elevation,
-    String semanticLabel,
-    material.ShapeBorder shape,
-    material.Color color,
-    bool captureInheritedThemes: true,
+  Future<T?> showMenu<T>({
+    required material.RelativeRect position,
+    required List<material.PopupMenuEntry<T>> items,
+    T? initialValue,
+    double? elevation,
+    String? semanticLabel,
+    material.ShapeBorder? shape,
+    material.Color? color,
     bool useRootNavigator: false,
   }) {
     return material.showMenu<T>(
@@ -154,7 +153,6 @@ extension TinyXContextShowMenu on material.BuildContext {
       semanticLabel: semanticLabel,
       shape: shape,
       color: color,
-      captureInheritedThemes: captureInheritedThemes,
       useRootNavigator: useRootNavigator,
     );
   }
@@ -165,13 +163,13 @@ extension TinyXContextShowModalBottomSheet on material.BuildContext {
   /// Shows a modal material design bottom sheet.
   ///
   /// Equivalent to [material.showModalBottomSheet].
-  Future<T> showMBS<T>({
-    @material.required material.WidgetBuilder builder,
-    material.Color backgroundColor,
-    double elevation,
-    material.ShapeBorder shape,
-    material.Clip clipBehavior,
-    material.Color barrierColor,
+  Future<T?> showMBS<T>({
+    required material.WidgetBuilder builder,
+    material.Color? backgroundColor,
+    double? elevation,
+    material.ShapeBorder? shape,
+    material.Clip? clipBehavior,
+    material.Color? barrierColor,
     bool isScrollControlled: false,
     bool useRootNavigator: false,
     bool isDismissible: true,
@@ -198,11 +196,11 @@ extension TinyXContextShowTimePicker on material.BuildContext {
   /// Shows a dialog containing a material design time picker.
   ///
   /// Equivalent to [material.showTimePicker].
-  Future<material.TimeOfDay> showTP({
-    @material.required material.TimeOfDay initialTime,
-    material.TransitionBuilder builder,
+  Future<material.TimeOfDay?> showTP({
+    required material.TimeOfDay initialTime,
+    material.TransitionBuilder? builder,
     bool useRootNavigator: true,
-    material.RouteSettings routeSettings,
+    material.RouteSettings? routeSettings,
   }) {
     return material.showTimePicker(
       context: this,

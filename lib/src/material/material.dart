@@ -8,7 +8,7 @@ extension XContextMaterialInkController on material.BuildContext {
   /// ancestor.
   ///
   /// `context.material` is equivalent to [material.Material.of].
-  material.MaterialInkController get materialInkController {
+  material.MaterialInkController? get materialInkController {
     return material.Material.of(this);
   }
 }
@@ -99,7 +99,7 @@ extension XContextTabController on material.BuildContext {
   ///
   /// `context.tabController` is equivalent to
   /// [material.DefaultTabController.of].
-  material.TabController get tabController {
+  material.TabController? get tabController {
     return material.DefaultTabController.of(this);
   }
 }
@@ -225,17 +225,6 @@ extension XContextTheme on material.BuildContext {
   }
 }
 
-/// `Theme.of(context, shadowThemeOnly: true)` as `context.shadowTheme`
-extension XContextShadowTheme on material.BuildContext {
-  /// Returns the shadow theme data from the closest [material.Theme] ancestor.
-  ///
-  /// `context.shadowTheme` is equivalent to
-  /// [material.Theme.of(context, shadowThemeOnly: true)].
-  material.ThemeData get shadowTheme {
-    return material.Theme.of(this, shadowThemeOnly: true);
-  }
-}
-
 /// `showAboutDialog(context: context, ...)` as `context.showAboutDialog(...)`
 extension XContextShowAboutDialog on material.BuildContext {
   /// Displays an [material.AboutDialog], which describes the application and
@@ -243,13 +232,13 @@ extension XContextShowAboutDialog on material.BuildContext {
   ///
   /// Equivalent to [material.showAboutDialog].
   void showAboutDialog({
-    String applicationName,
-    String applicationVersion,
-    material.Widget applicationIcon,
-    String applicationLegalese,
-    List<material.Widget> children,
+    String? applicationName,
+    String? applicationVersion,
+    material.Widget? applicationIcon,
+    String? applicationLegalese,
+    List<material.Widget>? children,
     bool useRootNavigator = true,
-    material.RouteSettings routeSettings,
+    material.RouteSettings? routeSettings,
   }) {
     return material.showAboutDialog(
       context: this,
@@ -271,11 +260,11 @@ extension XContextShowBottomSheet on material.BuildContext {
   ///
   /// Equivalent to [material.showBottomSheet].
   material.PersistentBottomSheetController<T> showBottomSheet<T>({
-    @material.required material.WidgetBuilder builder,
-    material.Color backgroundColor,
-    double elevation,
-    material.ShapeBorder shape,
-    material.Clip clipBehavior,
+    required material.WidgetBuilder builder,
+    material.Color? backgroundColor,
+    double? elevation,
+    material.ShapeBorder? shape,
+    material.Clip? clipBehavior,
   }) {
     return material.showBottomSheet(
       context: this,
@@ -293,26 +282,26 @@ extension XContextShowDatePicker on material.BuildContext {
   /// Shows a dialog containing a Material Design date picker.
   ///
   /// Equivalent to [material.showDatePicker].
-  Future<DateTime> showDatePicker({
-    @material.required DateTime initialDate,
-    @material.required DateTime firstDate,
-    @material.required DateTime lastDate,
+  Future<DateTime?> showDatePicker({
+    required DateTime initialDate,
+    required DateTime firstDate,
+    required DateTime lastDate,
     material.DatePickerEntryMode initialEntryMode =
         material.DatePickerEntryMode.calendar,
-    material.SelectableDayPredicate selectableDayPredicate,
-    String helpText,
-    String cancelText,
-    String confirmText,
-    material.Locale locale,
+    material.SelectableDayPredicate? selectableDayPredicate,
+    String? helpText,
+    String? cancelText,
+    String? confirmText,
+    material.Locale? locale,
     bool useRootNavigator = true,
-    material.RouteSettings routeSettings,
-    material.TextDirection textDirection,
-    material.TransitionBuilder builder,
+    material.RouteSettings? routeSettings,
+    material.TextDirection? textDirection,
+    material.TransitionBuilder? builder,
     material.DatePickerMode initialDatePickerMode = material.DatePickerMode.day,
-    String errorFormatText,
-    String errorInvalidText,
-    String fieldHintText,
-    String fieldLabelText,
+    String? errorFormatText,
+    String? errorInvalidText,
+    String? fieldHintText,
+    String? fieldLabelText,
   }) {
     return material.showDatePicker(
       context: this,
@@ -345,11 +334,11 @@ extension XContextShowDialog on material.BuildContext {
   /// barrier behavior (dialog is dismissible with a tap on the barrier).
   ///
   /// Equivalent to [material.showDialog].
-  Future<T> showDialog<T>({
+  Future<T?> showDialog<T>({
     bool barrierDismissible: true,
-    material.WidgetBuilder builder,
+    material.WidgetBuilder? builder,
     bool useRootNavigator: true,
-    material.RouteSettings routeSettings,
+    material.RouteSettings? routeSettings,
   }) {
     return material.showDialog<T>(
       context: this,
@@ -368,10 +357,10 @@ extension XContextShowLicensePage on material.BuildContext {
   ///
   /// Equivalent to [material.showLicensePage].
   void showLicensePage({
-    String applicationName,
-    String applicationVersion,
-    material.Widget applicationIcon,
-    String applicationLegalese,
+    String? applicationName,
+    String? applicationVersion,
+    material.Widget? applicationIcon,
+    String? applicationLegalese,
     bool useRootNavigator: false,
   }) {
     return material.showLicensePage(
@@ -388,15 +377,14 @@ extension XContextShowLicensePage on material.BuildContext {
 /// `showMenu(context: context, ...)` as `context.showMenu(...)`
 extension XContextShowMenu on material.BuildContext {
   /// Show a popup menu that contains the items at position.
-  Future<T> showMenu<T>({
-    @material.required material.RelativeRect position,
-    @material.required List<material.PopupMenuEntry<T>> items,
-    T initialValue,
-    double elevation,
-    String semanticLabel,
-    material.ShapeBorder shape,
-    material.Color color,
-    bool captureInheritedThemes: true,
+  Future<T?> showMenu<T>({
+    required material.RelativeRect position,
+    required List<material.PopupMenuEntry<T>> items,
+    T? initialValue,
+    double? elevation,
+    String? semanticLabel,
+    material.ShapeBorder? shape,
+    material.Color? color,
     bool useRootNavigator: false,
   }) {
     return material.showMenu<T>(
@@ -408,7 +396,6 @@ extension XContextShowMenu on material.BuildContext {
       semanticLabel: semanticLabel,
       shape: shape,
       color: color,
-      captureInheritedThemes: captureInheritedThemes,
       useRootNavigator: useRootNavigator,
     );
   }
@@ -419,13 +406,13 @@ extension XContextShowModalBottomSheet on material.BuildContext {
   /// Shows a modal material design bottom sheet.
   ///
   /// Equivalent to [material.showModalBottomSheet].
-  Future<T> showModalBottomSheet<T>({
-    @material.required material.WidgetBuilder builder,
-    material.Color backgroundColor,
-    double elevation,
-    material.ShapeBorder shape,
-    material.Clip clipBehavior,
-    material.Color barrierColor,
+  Future<T?> showModalBottomSheet<T>({
+    required material.WidgetBuilder builder,
+    material.Color? backgroundColor,
+    double? elevation,
+    material.ShapeBorder? shape,
+    material.Clip? clipBehavior,
+    material.Color? barrierColor,
     bool isScrollControlled: false,
     bool useRootNavigator: false,
     bool isDismissible: true,
@@ -453,8 +440,8 @@ extension XContextShowSearch on material.BuildContext {
   /// the user when the page is closed.
   ///
   /// Equivalent to [material.showSearch].
-  Future<T> showSearch<T>({
-    @material.required material.SearchDelegate<T> delegate,
+  Future<T?> showSearch<T>({
+    required material.SearchDelegate<T> delegate,
     String query: '',
   }) {
     return material.showSearch(
@@ -470,11 +457,11 @@ extension XContextShowTimePicker on material.BuildContext {
   /// Shows a dialog containing a material design time picker.
   ///
   /// Equivalent to [material.showTimePicker].
-  Future<material.TimeOfDay> showTimePicker({
-    @material.required material.TimeOfDay initialTime,
-    material.TransitionBuilder builder,
+  Future<material.TimeOfDay?> showTimePicker({
+    required material.TimeOfDay initialTime,
+    material.TransitionBuilder? builder,
     bool useRootNavigator: true,
-    material.RouteSettings routeSettings,
+    material.RouteSettings? routeSettings,
   }) {
     return material.showTimePicker(
       context: this,
