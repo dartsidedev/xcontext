@@ -116,8 +116,8 @@ extension TinyXContextShowDialog on material.BuildContext {
   ///
   /// Equivalent to [material.showDialog].
   Future<T?> showDialog<T>({
+    required material.WidgetBuilder builder,
     bool barrierDismissible: true,
-    material.WidgetBuilder? builder,
     bool useRootNavigator: true,
     material.RouteSettings? routeSettings,
   }) {

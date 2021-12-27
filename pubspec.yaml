@@ -1,6 +1,6 @@
 name: xcontext
 description: This simple package adds static extension methods and getters to the BuildContext context object from the widgets, material, and cupertino libraries.
-version: 1.0.0-nullsafety.0
+version: 1.0.0
 homepage: https://github.com/dartsidedev/xcontext
 issue_tracker: https://github.com/dartsidedev/xcontext/issues
 
