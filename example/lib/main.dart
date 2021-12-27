@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:xcontext/xcontext.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override

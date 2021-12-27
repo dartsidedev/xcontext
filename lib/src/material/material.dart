@@ -154,7 +154,7 @@ extension XContextListTileTheme on material.BuildContext {
   /// ancestor.
   ///
   /// `context.listTileTheme` is equivalent to [material.ListTileTheme.of].
-  material.ListTileTheme get listTileTheme {
+  material.ListTileThemeData get listTileTheme {
     return material.ListTileTheme.of(this);
   }
 }
