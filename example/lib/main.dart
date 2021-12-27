@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:xcontext/xcontext.dart';
 
 void main() {
@@ -29,8 +28,7 @@ class Example extends StatelessWidget {
     return Wrap(
       children: [
         for (final button in [
-          RaisedButton(
-            color: Colors.orange,
+          ElevatedButton(
             onPressed: () {
               context.showDatePicker(
                 initialDate: DateTime.now(),
@@ -40,16 +38,14 @@ class Example extends StatelessWidget {
             },
             child: Text('Date picker'),
           ),
-          RaisedButton(
-            color: Colors.red,
+          ElevatedButton(
             onPressed: () {
               context.navigator
                   .push(MaterialPageRoute(builder: (_) => ExampleRoute()));
             },
             child: Text('Navigator push'),
           ),
-          RaisedButton(
-            color: Colors.indigo,
+          ElevatedButton(
             onPressed: () {
               context.showModalBottomSheet(
                 builder: (_) => BottomSheet(
@@ -63,16 +59,14 @@ class Example extends StatelessWidget {
             },
             child: Text('Show Modal Bottom Sheet'),
           ),
-          RaisedButton(
-            color: Colors.cyanAccent,
+          ElevatedButton(
             onPressed: () {
               final time = context.showTimePicker(initialTime: TimeOfDay.now());
               print('selected time is $time');
             },
             child: Text('Show Time Picker'),
           ),
-          RaisedButton(
-            color: Colors.green,
+          ElevatedButton(
             onPressed: () {
               context.showAboutDialog(
                 applicationName: 'xcontext example app',
@@ -111,7 +105,7 @@ class ExampleRoute extends StatelessWidget {
 class Popper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return RaisedButton(
+    return ElevatedButton(
       onPressed: () {
         context.navigator.pop();
       },
