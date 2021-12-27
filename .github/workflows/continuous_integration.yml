@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     needs: [check]
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     # Continue on error doesn't seem to work?
     # Using || true for publishing
     # continue-on-error: true
