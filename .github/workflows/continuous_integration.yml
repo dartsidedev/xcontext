@@ -22,8 +22,6 @@ jobs:
         run: flutter analyze --fatal-infos --fatal-warnings .
       - name: Verify all tests pass
         run: flutter test --coverage
-      - name: Verify example app builds
-        run: cd example && flutter build apk
 
   publish:
     runs-on: ubuntu-latest
